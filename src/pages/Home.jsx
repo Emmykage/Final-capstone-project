@@ -4,10 +4,10 @@ import Navaigation from '../components/nav/Navigation'
 
 export const Home = () => {
   return (
-    <header>
+    <div className='header'>
         <Navaigation />
         <HeaderBody />
-    </header>
+    </div>
    
   )
 }

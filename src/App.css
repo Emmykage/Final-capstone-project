@@ -8,21 +8,22 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  /* background-color: grey; */
+  /* background-color: var(--color-bg-variant); */
+  background-color: rgb(239, 239, 239);
 }
-header{
+.header{
   display: flex;
   justify-content: space-between;
-  height: 70vh;
+  height: 100vh;
 
 }
 :root{
-  --color-bg: rgba(31,31,31, 0.9);
-  --color-bg-variant: rgb(202, 201, 201);
-  --color-primary: rgba(253,102,33, 0.9);  
+  --color-bg: rgba(31,31,31, 0.6);
+  --color-bg-variant: rgba(230, 230, 230, 0.7);
+  --color-primary: rgba(253,102,33, 0.8);  
   --color-white: #fff;
 
-  --color-abs: rgb(255,208,164);
+  --color-abs: rgba(255,208,164, 0.7);
 
   --transition: all 0.4s ease;
 }

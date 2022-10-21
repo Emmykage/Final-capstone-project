@@ -15,16 +15,48 @@ export const HeaderBody = () => {
         <div className='header-body'>
             <div className='items'>
                 <div className='item'>
-                    <img src={img1} />
+                    <div className='item-img'>
+                        <img src={img1} />
+                    </div>
+                    <div className='item-details'>
+                        <h3>Hyundei Powrer Bike</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?</p>
+                    </div>
+
+                    
                 </div>
                 <div className='item'>
-                    <img src={img2} />
+                    <div className='item-img'>
+                        <img src={img2} />
+                    </div>
+                    <div className='item-details'>
+                        <h3>Hyundei Powrer Bike</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?</p>
+                    </div>
+
+                    
                 </div>
                 <div className='item'>
-                    <img src={img3} />
+                    <div className='item-img'>
+                        <img src={img3} />
+                    </div>
+                    <div className='item-details'>
+                        <h3>Hyundei Powrer Bike</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?</p>
+                    </div>
+
+                    
                 </div>
                 <div className='item'>
-                    <img src={img4} />
+                    <div className='item-img'>
+                        <img src={img4} />
+                    </div>
+                    <div className='item-details'>
+                        <h3>Hyundei Powrer Bike</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?</p>
+                    </div>
+
+                    
                 </div>
 
             </div>
