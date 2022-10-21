@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './nav.css'
 // import logo from './bike.png'
 import logo from './../../assets/img/bike.png'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
+import { NavLink } from 'react-router-dom'
 const Navaigation = () => {
   const [sidebar, setSidebar] = useState(false)
 
@@ -22,14 +23,16 @@ const Navaigation = () => {
       
      
       <div className='logo'>
-         <img src={logo}/>
+        <NavLink to='/'>
+          <img src={logo}/>
+         </NavLink>
       </div>
     
       <ul className='nav-links'>
-        <li><a href='#'>Motocyle</a></li>
-        <li><a href='#'>Reserve form</a></li>
-        <li> <a href='#'>Reservations</a></li>
-        <li><a href='#'>New motocycle</a></li>
+        <li><NavLink to='/motocycles'>Motocyle</NavLink></li>
+        <li><a href='reserve_form'>Reserve form</a></li>
+        <li> <a href='reservations'>Reservations</a></li>
+        <li><a href='new'>New motocycle</a></li>
         <li><a href='#'>Delete</a></li>
       </ul>
     </nav>
