@@ -12,17 +12,19 @@
   display: flex;
   background-color: rgb(247, 246, 246);
 }
-/* 
+
+/*
 .header {
   display: flex;
   justify-content: space-between;
   height: 100vh;
 } */
-.sub-container{
+.sub-container {
   position: relative;
   margin-left: 250px;
   width: 100%;
 }
+
 :root {
   --color-bg: rgba(31, 31, 31, 0.6);
   --color-bg-variant: rgba(230, 230, 230, 0.7);

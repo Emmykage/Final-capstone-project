@@ -22,10 +22,10 @@
 
 .head-content .header-body .items .item {
   padding-top: 29px;
-
   background-color: var(--color-primary);
   flex-basis: 25%;
-  background-color: rgb(192, 154, 140);
+
+  /* background-color: rgb(192, 154, 140); */
   border: 1px solid black;
   text-align: center;
 }
@@ -45,12 +45,12 @@
 .item-details {
   text-align: center;
 }
-@media screen and (max-width: 600px){
+
+@media screen and (max-width: 600px) {
   .head-content {
     padding: 10px 0 0;
-
   }
-  
+
   .head-content .header-body .items {
     margin: 12px;
     flex-direction: column;
