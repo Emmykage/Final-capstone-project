@@ -1,0 +1,28 @@
+.footer {
+  padding: 29px 0;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.foot-col {
+  text-align: center;
+  flex: 1;
+}
+
+.foot-col span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foot-col span .icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+h4 {
+  color: var(--color-primary);
+}
