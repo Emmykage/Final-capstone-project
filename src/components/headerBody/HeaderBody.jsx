@@ -23,6 +23,7 @@ export const HeaderBody = () => {
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?</p>
                     </div>
 
+
                     
                 </div>
                 <div className='item'>

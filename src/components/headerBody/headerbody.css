@@ -1,7 +1,7 @@
 .head-content {
-  padding: 100px 0 0;
+  padding: 50px 0 0;
   flex: 3;
-  background: transparent;
+  /* background: transparent; */
 }
 
 .headline {
@@ -45,4 +45,15 @@
 
 .item-details {
   text-align: center;
+}
+@media screen and (max-width: 600px){
+  .head-content {
+    padding: 10px 0 0;
+
+  }
+  
+  .head-content .header-body .items {
+    margin: 12px;
+    flex-direction: column;
+  }
 }

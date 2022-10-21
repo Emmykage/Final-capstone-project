@@ -6,14 +6,12 @@ import Navaigation from '../components/nav/Navigation'
 export const Home = () => {
   return (
     <>
+     <Navaigation />
 
-    <div className='header'>
-        <Navaigation />
-        
-        <div>
+    <div className='sub-container'>
         <HeaderBody />
         <Footer/>
-        </div>
+       
     </div>
    
 
