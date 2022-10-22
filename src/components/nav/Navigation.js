@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import './nav.css'
-// import logo from './bike.png'
+import { FaFacebookF } from 'react-icons/fa'
+import { FaTwitter } from 'react-icons/fa'
+import { FaLinkedinIn } from 'react-icons/fa'
 import logo from './../../assets/img/bike.png'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {AiOutlineClose} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom'
 const Navaigation = () => {
+  const activeLink = 'link-bg-color';
+  const normalLink = ''
   const [sidebar, setSidebar] = useState(false)
 
 
@@ -29,12 +33,28 @@ const Navaigation = () => {
       </div>
     
       <ul className='nav-links'>
-        <li><NavLink to='/motocycles'>Motocyle</NavLink></li>
-        <li><a href='reserve_form'>Reserve form</a></li>
-        <li> <a href='reservations'>Reservations</a></li>
-        <li><a href='new'>New motocycle</a></li>
-        <li><a href='#'>Delete</a></li>
+        <li><NavLink 
+        className={({isActive})=> (isActive ? activeLink : normalLink)}
+        to='/motocycles'>Motocyle</NavLink></li>
+        <li><NavLink 
+        className={({isActive})=> (isActive ? activeLink : normalLink)}
+        to='reserve_form'>Reserve form</NavLink></li>
+        <li> <NavLink
+        className={({isActive})=> (isActive ? activeLink : normalLink)}
+         to='reservations'>Reservations</NavLink></li>
+        <li><NavLink 
+        className={({isActive})=> (isActive ? activeLink : normalLink)}
+         to='new'>New motocycle</NavLink></li>
+        <li><NavLink 
+        className={({isActive})=> (isActive ? activeLink : normalLink)}
+         to='/delete'>Delete</NavLink></li>
       </ul>
+
+      <div className='social-icons'>
+        <span><FaFacebookF/></span>
+        <span><FaTwitter/></span>
+        <span><FaLinkedinIn/></span>
+      </div>
     </nav>
     </div>
   )

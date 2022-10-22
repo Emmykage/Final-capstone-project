@@ -10,7 +10,7 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  background-color: rgb(247, 246, 246);
+  background-color: rgb(255, 255, 255);
 }
 
 /*
@@ -28,7 +28,8 @@
 :root {
   --color-bg: rgba(31, 31, 31, 0.6);
   --color-bg-variant: rgba(230, 230, 230, 0.7);
-  --color-primary: rgba(253, 102, 33, 0.8);
+  --color-primary:  rgb(84, 2, 84);
+  --color-primary-var:  rgb(130, 8, 130);
   --color-white: #fff;
   --color-abs: rgba(255, 208, 164, 0.7);
   --transition: all 0.4s ease;

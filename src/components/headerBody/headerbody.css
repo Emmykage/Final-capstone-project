@@ -1,11 +1,12 @@
 .head-content {
-  padding: 50px 0 0;
+  padding: 20px 0 0;
   flex: 3;
 }
 
 .headline {
   text-align: center;
   width: 100%;
+  color: var(--color-primary-var);
 }
 
 .header-body {
@@ -22,11 +23,9 @@
 
 .head-content .header-body .items .item {
   padding-top: 29px;
-  background-color: var(--color-primary);
+  /* background-color: var(--color-primary); */
   flex-basis: 25%;
-
-  /* background-color: rgb(192, 154, 140); */
-  border: 1px solid black;
+   border: 1px solid black;
   text-align: center;
 }
 
