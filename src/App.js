@@ -21,7 +21,7 @@ function App() {
             <Details
               motocycle={
               {
-                image: 'https://imgd.aeplcdn.com/1280x720/bw/models/vespa-sxl-150-bs-vi--fi20200114182809.jpg?q=80',
+                image: 'https://firebasestorage.googleapis.com/v0/b/hospital-tracker-ug.appspot.com/o/vespa.png?alt=media&token=c88b23e4-ccd3-4cc5-8f63-14434b49c93b',
                 name: 'Vespa 946',
                 financeFee: 129,
                 purchaseFee: 249,
