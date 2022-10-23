@@ -151,14 +151,15 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
-
-  .container{
+  .container {
     flex-direction: column;
   }
-  .container .content{
+
+  .container .content {
     margin: 0;
     padding: 21px;
   }
+
   .details-wrapper {
     flex-direction: column;
     height: unset;
