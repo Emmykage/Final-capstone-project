@@ -1,5 +1,5 @@
 import React from 'react'
-import './details.module.css'
+import './Details.module.css'
 import {BsChevronRight} from 'react-icons/bs'
 import {BiCog} from 'react-icons/bi'
 import {CgChevronRightO} from 'react-icons/cg'
