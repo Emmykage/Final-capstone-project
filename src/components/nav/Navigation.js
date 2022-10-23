@@ -22,7 +22,7 @@ const Navaigation = () => {
 
         <div className="logo">
           <NavLink to="/">
-            <img src={logo}  alt="Logo"/>
+            <img src={logo} alt="Logo" />
           </NavLink>
         </div>
 
