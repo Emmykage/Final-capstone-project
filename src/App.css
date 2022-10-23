@@ -149,3 +149,34 @@ button:hover {
 .color-picker {
   margin-top: 21px;
 }
+
+@media only screen and (max-width: 600px) {
+
+  .container{
+    flex-direction: column;
+  }
+  .container .content{
+    margin: 0;
+    padding: 21px;
+  }
+  .details-wrapper {
+    flex-direction: column;
+    height: unset;
+  }
+
+  .details-wrapper .img-container {
+    width: 100%;
+    padding: 0;
+  }
+
+  .details-wrapper .description {
+    text-align: center;
+    width: 100%;
+    padding-top: 32px;
+  }
+
+  .reserveBtn {
+    margin: 4px auto;
+    padding: 12px 48px;
+  }
+}

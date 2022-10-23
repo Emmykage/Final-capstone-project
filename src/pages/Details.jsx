@@ -54,6 +54,6 @@ const Details = ({ motocycle }) =>
   )
 
 Details.propTypes = {
-  motocycle : PropTypes.Object.isRequired,
+  motocycle : PropTypes.object.isRequired,
 };
 export default Details
