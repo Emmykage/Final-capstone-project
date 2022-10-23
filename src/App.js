@@ -8,22 +8,33 @@ import Motocycles from './pages/Motocycles';
 import NewMotocycle from './pages/NewMotocycle';
 import ReserveForm from './pages/ReserveForm';
 import Reservation from './pages/Reservations';
+import MainLayout from './layout/main';
 
 function App() {
   return (
 
-    <div className="container">
-      <Navaigation />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details" element={<Details />} />
-        <Route path="/motocycles" element={<Motocycles />} />
-        <Route path="/new" element={<NewMotocycle />} />
-        <Route path="/reserve_form" element={<ReserveForm />} />
-        <Route path="/reservations" element={<Reservation />} />
+        <Route path="/" element={<MainLayout><Home /></MainLayout>} />
+        <Route path="/details" element={
+          <MainLayout>
+            <Details
+            motocycle={
+              {
+                image:"https://imgd.aeplcdn.com/1280x720/bw/models/vespa-sxl-150-bs-vi--fi20200114182809.jpg?q=80",
+                name: "Vespa 946",
+                financeFee: 129,
+                purchaseFee:249,
+                payable: 9879,
+                duration: 48,
+              }
+            }
+            />
+          </MainLayout>} />
+        <Route path="/motocycles" element={<MainLayout><Motocycles /></MainLayout>} />
+        <Route path="/new" element={<MainLayout><NewMotocycle /></MainLayout>} />
+        <Route path="/reserve_form" element={<MainLayout><ReserveForm /></MainLayout>} />
+        <Route path="/reservations" element={<MainLayout><Reservation /></MainLayout>} />
       </Routes>
-
-    </div>
 
   );
 }
