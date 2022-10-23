@@ -2,7 +2,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
-import Navaigation from './components/nav/Navigation';
 import Details from './pages/Details';
 import Motocycles from './pages/Motocycles';
 import NewMotocycle from './pages/NewMotocycle';
