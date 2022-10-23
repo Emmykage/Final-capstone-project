@@ -1,6 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Navigation from '../components/nav/Navigation';
-export default function MainLayout({children}) {
+
+const  MainLayout = ({children})  =>{
 
     return (
         <div className="container">
@@ -10,3 +12,8 @@ export default function MainLayout({children}) {
 
     )
 }
+
+MainLayout.propTypes = {
+    children: PropTypes.node,
+}
+export default MainLayout;
