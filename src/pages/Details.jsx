@@ -1,10 +1,15 @@
 import React from 'react'
 import './details.module.css'
+import {BsChevronRight} from 'react-icons/bs'
+import {BiCog} from 'react-icons/bi'
+import {CgChevronRightO} from 'react-icons/cg'
 
 const Details = ({motocycle}) => {
   return (
     <div className='details-wrapper'>
-      <img src={motocycle.image} alt={motocycle.name} />
+      <div className='img-container'>
+        <img src={motocycle.image} alt={motocycle.name} />
+      </div>
       <div className='description'>
         <h2>{motocycle.name}</h2>
         <p>- £350 upon every vespa purchase.</p>
@@ -33,8 +38,10 @@ const Details = ({motocycle}) => {
         <p className='rep'>5.9% APR Representative</p>
 
         <div className='buttons'>
-          <button className='btn'>DISCOVER MORE MODELS </button>
+          <button className='btn discover'>DISCOVER MORE MODELS  <BsChevronRight/></button>
         </div>
+
+        <button className='btn reserveBtn'><BiCog/> Reserve <CgChevronRightO/></button>
       </div>
     </div>
   )
