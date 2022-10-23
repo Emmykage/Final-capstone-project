@@ -105,9 +105,15 @@ html {
   margin-top: 50px;
 }
 
+.reserveBtn svg {
+  height: 21px;
+  margin: 0 8px;
+  font-size: 1.5em;
+}
+
 .buttons .discover svg {
   margin-top: 4px;
-  color:rgba(253, 102, 33, 0.8);
+  color: rgba(253, 102, 33, 0.8);
 }
 
 .buttons .discover {
@@ -138,12 +144,6 @@ button:hover {
   align-items: center;
   margin-left: auto;
   margin-top: 50px;
-}
-
-.reserveBtn svg {
-  height: 21px;
-  margin: 0 8px;
-  font-size: 1.5em;
 }
 
 .color-picker {
