@@ -1,11 +1,12 @@
-import React from 'react'
-import './Details.module.css'
-import {BsChevronRight} from 'react-icons/bs'
-import {BiCog} from 'react-icons/bi'
-import {CgChevronRightO} from 'react-icons/cg'
+import React from 'react';
+import PropTypes from 'prop-types';
+import './Details.module.css';
+import { BsChevronRight } from 'react-icons/bs';
+import { BiCog } from 'react-icons/bi';
+import { CgChevronRightO } from 'react-icons/cg';
 
-const Details = ({motocycle}) => {
-  return (
+const Details = ({ motocycle }) => 
+ (
     <div className='details-wrapper'>
       <div className='img-container'>
         <img src={motocycle.image} alt={motocycle.name} />
@@ -51,6 +52,8 @@ const Details = ({motocycle}) => {
       </div>
     </div>
   )
-}
 
+Details.propTypes = {
+  motocycle : PropTypes.Object.isRequired,
+};
 export default Details
