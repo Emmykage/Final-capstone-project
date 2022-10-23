@@ -14,7 +14,7 @@
 }
 
 .container .content {
-  margin: 18px 18px 18px 268px;
+  margin: 36px 36px 18px 268px;
   width: 100%;
 }
 
@@ -140,9 +140,12 @@ button:hover {
   margin-top: 50px;
 }
 
-
 .reserveBtn svg {
   height: 21px;
   margin: 0 8px;
   font-size: 1.5em;
+}
+
+.color-picker {
+  margin-top: 21px;
 }

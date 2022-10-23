@@ -41,6 +41,12 @@ const Details = ({motocycle}) => {
           <button className='btn discover'>DISCOVER MORE MODELS  <BsChevronRight/></button>
         </div>
 
+        <div className='color-picker'>
+          <svg viewBox="0 0 10 10" width="30%">
+            <circle cx="5" cy="5" r="3" stroke-width="1.5" stroke="#00247D" fill="#fff"/>
+          </svg>
+        </div>
+
         <button className='btn reserveBtn'><BiCog/> Reserve <CgChevronRightO/></button>
       </div>
     </div>
