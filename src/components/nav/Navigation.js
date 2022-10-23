@@ -11,7 +11,6 @@ const Navaigation = () => {
 
   const showMenu = () => setSidebar(!sidebar)
   return (
-
     <div className='nav-bar'>
       <div className='icon-div'>
         <GiHamburgerMenu className='icon' onClick={showMenu} />
