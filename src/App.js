@@ -10,6 +10,7 @@ import Reservation from './pages/Reservations';
 import MainLayout from './layout/main';
 import Login from './pages/auth/login';
 import Register from './pages/auth/register';
+import ForgotPassword from './pages/auth/forgot-password';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
       <Route path="auth">
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
       </Route>
     </Routes>
 

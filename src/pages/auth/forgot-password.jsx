@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const LoginScreen = (props) => {
+const ForgotPasswordScreen = (props) => {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">
@@ -31,4 +31,4 @@ const LoginScreen = (props) => {
     </div>
   )
 }
-export default LoginScreen;
+export default ForgotPasswordScreen;

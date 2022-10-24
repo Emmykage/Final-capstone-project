@@ -35,7 +35,7 @@ const LoginScreen = (props) => {
             </button>
           </div>
           <p className="forgot-password text-center ">
-            Forgot <a href="#">password?</a>
+            Forgot <Link  to ='/auth/forgot-password'>password?</Link>
           </p>
         </div>
       </form>
