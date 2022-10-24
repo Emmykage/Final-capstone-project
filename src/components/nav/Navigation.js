@@ -46,7 +46,7 @@ const Navaigation = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="reserve_form"
+              to="/reserve_form"
             >
               Reserve form
             </NavLink>
@@ -55,7 +55,7 @@ const Navaigation = () => {
             {' '}
             <NavLink
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="reservations"
+              to="/reservations"
             >
               Reservations
             </NavLink>
@@ -63,7 +63,7 @@ const Navaigation = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
-              to="new"
+              to="/new"
             >
               New motocycle
             </NavLink>

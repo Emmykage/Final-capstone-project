@@ -69,7 +69,8 @@ form select {
   padding: 8px 4px;
 }
 
-.res-contain {
+.res-contain,
+.moto-contain {
   width: 100%;
   max-width: 800px;
   margin: 280px auto;
@@ -78,7 +79,8 @@ form select {
   /* background-color: coral; */
 }
 
-.res-contain table {
+.res-contain table,
+.moto-contain table {
   width: 100%;
   text-align: left;
 }
@@ -91,11 +93,27 @@ form select {
   border-collapse: collapse;
 }
 
+.moto-contain table,
+.moto-contain table td,
+.moto-contain th {
+  border: 1px solid black;
+  padding: 18px;
+  border-collapse: collapse;
+}
+
 .res-contain tr:nth-child(even) {
   background-color: #d6eeee;
 }
 
+.moto-contain tr:nth-child(even) {
+  background-color: #d6eeee;
+}
+
 .res-contain tr:hover {
+  background-color: rgb(201, 109, 201);
+}
+
+.moto-contain tr:hover {
   background-color: rgb(201, 109, 201);
 }
 
