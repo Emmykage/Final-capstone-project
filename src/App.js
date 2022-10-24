@@ -9,6 +9,7 @@ import ReserveForm from './pages/ReserveForm';
 import Reservation from './pages/Reservations';
 import MainLayout from './layout/main';
 import Login from './pages/auth/login';
+import Register from './pages/auth/register';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
 
       <Route path="auth">
         <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Route>
     </Routes>
 
