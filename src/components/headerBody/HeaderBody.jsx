@@ -54,6 +54,7 @@ export const HeaderBody = () => {
         </div>
         <div className='header-body'>
             <div className='items'>
+                <div className='limit'>
                 <Swiper
                     pagination={{
                     type: "progressbar",
@@ -79,7 +80,7 @@ export const HeaderBody = () => {
 
                 </Swiper>
                       
-
+                </div>
             </div>
         </div>
     </div>

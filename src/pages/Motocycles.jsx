@@ -1,6 +1,33 @@
 
 import React from 'react'
+import Bikes from '../components/bikes/Bikes'
 // import { useDispatch, useSelector, shallowEqual } from 'react-redux'
+
+
+const bikes = [{
+  id: 1,
+  model: 'Hyundai',
+  color: 'black',
+  photo: 'photo',
+  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
+
+},
+{
+  id: 2,
+  model: 'Hyundai',
+  color: 'black',
+  photo: 'photo',
+  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
+
+
+},{
+  id: 3,
+  model: 'Hyundai',
+  color: 'black',
+  photo: 'photo',
+  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
+
+}]
 
 const Motocycles = () => {
   // const motocycles = useSelector((state) => state.motocycles, shallowEqual)
@@ -11,52 +38,12 @@ const Motocycles = () => {
   return (
     <div className='sub-container'>
       <div className='moto-contain'> 
-      <table>
-      <thead>
-        <tr><th>Bike model</th>
-        <th>color</th>
-        <th>description</th></tr>
-      </thead>
-        
-      <tbody>
-
-        
-    <tr>
-    <td>toyota</td>
-    <td>black</td>
-    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!</td>
-    </tr>
-    <tr>
-    <td>toyota</td>
-    <td>black</td>
-    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!</td>
-    </tr>
-   
-    <tr>
-    <td>toyota</td>
-    <td>black</td>
-    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!</td>
-    </tr>
-   
-    <tr>
-    <td>toyota</td>
-    <td>black</td>
-    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!</td>
-    </tr>
-   
-    <tr>
-    <td>toyota</td>
-    <td>black</td>
-    <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!</td>
-    </tr>
-   
-   
-
-        {/* {motocycles.map((data, index) =>(
-          <Reservation model={data.model} city={data.city} date={data.date} key={index}/>
-        ))} */}
-       </tbody>
-       </table>
+      <ul>
+        {bikes.map((data) =>(
+          <Bikes key={data.id} photo={data.photo} model={data.model} color={data.color} description={data.description} id={data.id}/>
+        )
+        )}
+      </ul>
     </div>
     </div>
   )

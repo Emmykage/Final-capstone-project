@@ -3,17 +3,20 @@ import Reservation from '../components/Reservations/Reservation'
 
 
 const reservations = [{
-  model: 'toyo',
-  city: 'nevada',
+  name: 'toyo',
+  brand: 'toyota wheeler',
+  color: 'nevada',
   date: '2022-10-24'
 },
 {
-  model: 'toyo',
-  city: 'nevada',
+  name: 'Hyunda',
+  brand: 'Hyundai alvero',
+  city: 'Las vegas',
   date: '2022-10-24'
 },
 {
-  model: 'toyo',
+  name: 'innoson',
+  brand: 'toyo',
   city: 'nevada',
   date: '2022-10-24'
 },

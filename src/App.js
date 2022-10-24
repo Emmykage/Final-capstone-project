@@ -39,7 +39,7 @@ function App() {
       <Route path="/reserve_form" element={<MainLayout><ReserveForm /></MainLayout>} />
       <Route path="/reservations" element={<MainLayout><Reservation /></MainLayout>} />
       <Route path="/delete" element={<MainLayout><Delete /></MainLayout>} />
-
+      <Route path="/details/:id" element={<MainLayout><Details /></MainLayout>} />
     </Routes>
 
   );
