@@ -1,12 +1,18 @@
+import React from 'react';
+import { Link } from "react-router-dom";
 
-import React from "react"
-
-export default function (props) {
+const LoginScreen = (props) => {
   return (
     <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
+          <div className="text-center form-desc">
+            Not yet registered?{" "}
+            <span className="link-primary">
+             <Link to="/register"> Sign up</Link>
+            </span>
+          </div>
           <div className="form-group ">
             <label>Email address</label>
             <input
@@ -36,3 +42,4 @@ export default function (props) {
     </div>
   )
 }
+export default LoginScreen;

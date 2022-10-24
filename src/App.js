@@ -8,7 +8,7 @@ import NewMotocycle from './pages/NewMotocycle';
 import ReserveForm from './pages/ReserveForm';
 import Reservation from './pages/Reservations';
 import MainLayout from './layout/main';
-import Login from './pages/login';
+import Login from './pages/auth/login';
 
 function App() {
   return (
@@ -42,7 +42,6 @@ function App() {
       <Route path="auth">
         <Route path="login" element={<Login />} />
       </Route>
-      
     </Routes>
 
   );

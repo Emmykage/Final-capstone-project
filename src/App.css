@@ -208,7 +208,7 @@ button:hover {
 
 .Auth-form-title {
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0;
   font-size: 24px;
   color: rgb(34, 34, 34);
   font-weight: 800;
@@ -240,4 +240,18 @@ label {
   font-weight: 600;
   font-size: 16px;
   margin-top: 1em;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.link-primary {
+  color: rgb(253, 102, 33);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.form-desc {
+  margin-bottom: 1em;
 }
