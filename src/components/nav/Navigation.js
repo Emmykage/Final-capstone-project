@@ -38,6 +38,14 @@ const Navaigation = () => {
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
+              to="/"
+            >
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? activeLink : normalLink)}
               to="/motocycles"
             >
               Motocyle

@@ -106,6 +106,7 @@ form select {
 .moto-contain ul {
   /* background-color: aqua; */
   padding: 0;
+  list-style: none;
 }
 
 .moto-contain ul li a {
@@ -115,7 +116,7 @@ form select {
   border: 1px solid black;
   text-decoration: none;
   list-style: none;
-  background-color: chocolate;
+  /* background-color: chocolate; */
 }
 
 .moto-contain ul li > div {
