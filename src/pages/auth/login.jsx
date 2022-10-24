@@ -10,7 +10,7 @@ const LoginScreen = (props) => {
           <div className="text-center form-desc">
             Not yet registered?{" "}
             <span className="link-primary">
-             <Link to="/register"> Sign up</Link>
+             <Link to="/auth/register"> Sign up</Link>
             </span>
           </div>
           <div className="form-group ">
