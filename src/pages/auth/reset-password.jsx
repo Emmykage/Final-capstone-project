@@ -8,7 +8,7 @@ const LoginScreen = (props) => {
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Password Reset</h3>
           <div className="text-center form-desc">
-            Create account password?{" "}
+            Create account password
           </div>
           <div className="form-group">
             <label>Password</label>
