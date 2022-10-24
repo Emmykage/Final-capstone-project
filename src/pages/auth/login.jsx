@@ -34,7 +34,7 @@ const LoginScreen = (props) => {
               Submit
             </button>
           </div>
-          <p className="forgot-password text-right ">
+          <p className="forgot-password text-center ">
             Forgot <a href="#">password?</a>
           </p>
         </div>

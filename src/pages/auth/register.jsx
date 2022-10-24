@@ -13,6 +13,16 @@ const RegisterScreen = (props) => {
              <Link to="/auth/login"> Sign in</Link>
             </span>
           </div>
+
+          <div className="form-group ">
+            <label>Full Name</label>
+            <input
+              type="email"
+              className="form-control mt-1"
+              placeholder="e.g Jane Doe"
+            />
+          </div>
+
           <div className="form-group ">
             <label>Email address</label>
             <input
@@ -34,9 +44,6 @@ const RegisterScreen = (props) => {
               Submit
             </button>
           </div>
-          <p className="forgot-password text-right ">
-            Forgot <a href="#">password?</a>
-          </p>
         </div>
       </form>
     </div>
