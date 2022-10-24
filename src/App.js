@@ -8,6 +8,7 @@ import NewMotocycle from './pages/NewMotocycle';
 import ReserveForm from './pages/ReserveForm';
 import Reservation from './pages/Reservations';
 import MainLayout from './layout/main';
+import Login from './pages/login';
 
 function App() {
   return (
@@ -37,6 +38,11 @@ function App() {
       <Route path="/new" element={<MainLayout><NewMotocycle /></MainLayout>} />
       <Route path="/reserve_form" element={<MainLayout><ReserveForm /></MainLayout>} />
       <Route path="/reservations" element={<MainLayout><Reservation /></MainLayout>} />
+
+      <Route path="auth">
+        <Route path="login" element={<Login />} />
+      </Route>
+      
     </Routes>
 
   );
