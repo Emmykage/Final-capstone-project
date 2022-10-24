@@ -22,19 +22,89 @@
 .sub-container {
   position: relative;
   margin-left: 250px;
-  width: 100%;
+  width: calc(100% - 250px);
+
+  /* background-color: red; */
+
+  /* width: 100%; */
 }
 
 :root {
-  --color-bg: rgba(31, 31, 31, 0.6);
-  --color-bg-variant: rgba(230, 230, 230, 0.7);
-  --color-primary:  rgb(84, 2, 84);
-  --color-primary-var:  rgb(130, 8, 130);
+  --color-bg: rgb(31, 31, 31);
+  --color-bg-variant: rgb(230, 230, 230);
+  --color-primary: rgb(84, 2, 84);
+  --color-primary-var: rgb(130, 8, 130);
   --color-white: #fff;
-  --color-abs: rgba(255, 208, 164, 0.7);
+  --color-abs: rgb(255, 208, 164, 0.7);
   --transition: all 0.4s ease;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+form {
+  width: 100%;
+  max-width: 650px;
+  margin: 200px auto;
+  margin: 280px auto;
+}
+
+form > div {
+  width: 100%;
+}
+
+.model-selector {
+  width: 100%;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 8px 4px;
+}
+
+.res-contain {
+  width: 100%;
+  max-width: 800px;
+  margin: 280px auto;
+  justify-content: space-between;
+
+  /* background-color: coral; */
+}
+
+.res-contain table {
+  width: 100%;
+  text-align: left;
+}
+
+.res-contain table,
+.res-contain table td,
+.res-contain th {
+  border: 1px solid black;
+  padding: 18px;
+  border-collapse: collapse;
+}
+
+.res-contain tr:nth-child(even) {
+  background-color: #d6eeee;
+}
+
+.res-contain tr:hover {
+  background-color: rgb(201, 109, 201);
+}
+
+.res-contain li {
+  display: flex;
+  margin-right: 20px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+  .sub-container {
+    padding: 12px;
+    margin: 0;
+    width: 100%;
+  }
 }

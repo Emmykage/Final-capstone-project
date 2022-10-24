@@ -8,15 +8,20 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-white);
+
+  /* background-color: green; */
+
   /* flex: 3; */
 }
 
 .nav-links {
   margin-top: 67px;
   list-style: none;
-flex: 3;
+  flex: 3;
   width: 100%;
   padding: 0;
+
+  /* background-color: blue; */
 }
 
 .nav-links li {
@@ -36,7 +41,8 @@ flex: 3;
   color: var(--color-primary);
   font-weight: 500;
 }
-.nav-links li a.link-bg-color{
+
+.nav-links li a.link-bg-color {
   background-color: var(--color-primary);
   color: white;
 }
@@ -55,17 +61,20 @@ flex: 3;
   text-align: left;
 
   /* background-color: brown; */
+
   /* align-self: flex-start; */
   margin: 18px 14px;
   display: none;
 }
-.social-icons{
+
+.social-icons {
   width: 70%;
   margin: auto;
   display: flex;
   justify-content: space-around;
   justify-self: end;
 }
+
 .icon {
   font-size: 26px;
   color: orangered;
@@ -73,18 +82,31 @@ flex: 3;
 
 @media screen and (max-width: 600px) {
   .nav-bar {
-    /* display: block; */
     position: absolute;
-    background-color: brown;
     z-index: 1;
+  }
+
+  nav {
+    height: 100vh;
+  }
+
+  nav .logo {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav .logo img {
+    width: 100%;
   }
 
   .icon-div {
     display: block;
+    align-self: flex-start;
   }
 
   .nav-bar .nav-menu.active {
-    display: block;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;
