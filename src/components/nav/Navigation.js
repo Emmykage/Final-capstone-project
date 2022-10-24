@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './nav.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+// import logo from './bike.png'
 
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -10,6 +11,7 @@ import logo from '../../assets/img/bike.png';
 const Navaigation = () => {
   const activeLink = 'link-bg-color';
   const normalLink = '';
+
   const [sidebar, setSidebar] = useState(false);
 
   const showMenu = () => setSidebar(!sidebar);
@@ -27,10 +29,12 @@ const Navaigation = () => {
         <div className="logo">
           <NavLink to="/">
             <img src={logo} alt="logo" />
+
           </NavLink>
         </div>
 
         <ul className="nav-links">
+
           <li>
             <NavLink
               className={({ isActive }) => (isActive ? activeLink : normalLink)}
@@ -79,6 +83,7 @@ const Navaigation = () => {
           <span><FaTwitter /></span>
           <span><FaLinkedinIn /></span>
         </div>
+
       </nav>
     </div>
   );
