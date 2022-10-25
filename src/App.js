@@ -46,7 +46,6 @@ function App() {
       <Route path="/delete" element={<MainLayout><Delete /></MainLayout>} />
       <Route path="/details/:id" element={<MainLayout><Details /></MainLayout>} />
 
-
       <Route path="auth">
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
