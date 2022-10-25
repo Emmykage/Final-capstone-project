@@ -45,10 +45,10 @@
 }
 
 .item-img {
-  height: 50%;
+  height: 400px;
   width: 100%;
   max-width: 700px;
-  margin: auto;
+  margin: 30px auto 0;
   border: 1px solid black;
 }
 
