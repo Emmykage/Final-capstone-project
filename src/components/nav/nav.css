@@ -6,20 +6,22 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  background-color: var(--color-bg-variant);
+  justify-content: space-between;
+  background-color: var(--color-white);
 
-  /* background-color: red; */
-  flex: 1;
+  /* background-color: green; */
+
+  /* flex: 3; */
 }
 
 .nav-links {
   margin-top: 67px;
   list-style: none;
-
-  /* background-color: brown; */
+  flex: 3;
   width: 100%;
   padding: 0;
+
+  /* background-color: blue; */
 }
 
 .nav-links li {
@@ -36,11 +38,13 @@ nav {
   display: flex;
   padding-left: 12px;
   text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+}
 
-  /* color: var(--color-primary); */
-
-  /* padding: 12px 17px; */
-  color: darkred;
+.nav-links li a.link-bg-color {
+  background-color: var(--color-primary);
+  color: white;
 }
 
 .nav-links li a:hover {
@@ -57,9 +61,18 @@ nav {
   text-align: left;
 
   /* background-color: brown; */
-  align-self: flex-start;
+
+  /* align-self: flex-start; */
   margin: 18px 14px;
   display: none;
+}
+
+.social-icons {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  justify-self: end;
 }
 
 .icon {
@@ -69,18 +82,31 @@ nav {
 
 @media screen and (max-width: 600px) {
   .nav-bar {
-    /* display: block; */
     position: absolute;
-    background-color: brown;
     z-index: 1;
+  }
+
+  nav {
+    height: 100vh;
+  }
+
+  nav .logo {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav .logo img {
+    width: 100%;
   }
 
   .icon-div {
     display: block;
+    align-self: flex-start;
   }
 
   .nav-bar .nav-menu.active {
-    display: block;
+    display: flex;
     position: absolute;
     top: 0;
     left: 0;

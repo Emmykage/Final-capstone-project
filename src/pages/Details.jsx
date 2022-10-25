@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Details.module.css';
+import './details.module.css';
 import { BsChevronRight } from 'react-icons/bs';
 import { BiCog } from 'react-icons/bi';
 import { CgChevronRightO } from 'react-icons/cg';
