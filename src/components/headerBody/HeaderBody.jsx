@@ -56,6 +56,7 @@ export const HeaderBody = () => {
             <div className='items'>
                 <div className='limit'>
                 <Swiper
+                    // slidesPerView={3}
                     pagination={{
                     type: "progressbar",
                     }}

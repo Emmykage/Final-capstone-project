@@ -45,11 +45,17 @@
 }
 
 .item-img {
+  padding: 0;
   height: 400px;
   width: 100%;
   max-width: 700px;
   margin: 30px auto 0;
   border: 1px solid black;
+
+  /* border-radius: 50%; */
+  overflow: hidden;
+
+  /* object-fit: ; */
 }
 
 .item-details {
