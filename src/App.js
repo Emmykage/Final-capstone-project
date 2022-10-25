@@ -9,6 +9,10 @@ import ReserveForm from './pages/ReserveForm';
 import Reservation from './pages/Reservations';
 import MainLayout from './layout/main';
 import Delete from './pages/Delete';
+import Login from './pages/auth/login';
+import Register from './pages/auth/register';
+import ForgotPassword from './pages/auth/forgot-password';
+import ResetPassword from './pages/auth/reset-password';
 
 function App() {
   return (
@@ -38,8 +42,18 @@ function App() {
       <Route path="/new" element={<MainLayout><NewMotocycle /></MainLayout>} />
       <Route path="/reserve_form" element={<MainLayout><ReserveForm /></MainLayout>} />
       <Route path="/reservations" element={<MainLayout><Reservation /></MainLayout>} />
+
       <Route path="/delete" element={<MainLayout><Delete /></MainLayout>} />
       <Route path="/details/:id" element={<MainLayout><Details /></MainLayout>} />
+
+
+      <Route path="auth">
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+        <Route path="forgot-password" element={<ForgotPassword />} />
+        <Route path="reset-password" element={<ResetPassword />} />
+      </Route>
+
     </Routes>
 
   );
