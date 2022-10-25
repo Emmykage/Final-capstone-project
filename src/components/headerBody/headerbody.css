@@ -11,15 +11,13 @@
 }
 
 .header-body {
-  margin-top: 95px;
+  margin-top: 25px;
   width: 100%;
 }
 
 .head-content .header-body .items {
   margin: 0;
   width: 100%;
-
-  /* width: 100% */
 }
 
 .head-content .header-body .items .item {
