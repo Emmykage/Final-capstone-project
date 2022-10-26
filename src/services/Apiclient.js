@@ -21,4 +21,14 @@ export default class ApiClient {
         });
         return response;
     };
+
+    static registerUser = ({ name, password }) => {
+        const response = fetch(`${this.BASE_URL}/create?name=${name}?password=${password}`, {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+        });
+        return response;
+    };
   }
