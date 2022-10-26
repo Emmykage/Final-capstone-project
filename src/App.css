@@ -12,6 +12,18 @@ body {
   padding: 0;
 }
 
+h2 {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
 .container {
   position: relative;
   width: 100%;
@@ -109,6 +121,11 @@ form select {
   list-style: none;
 }
 
+.bike-list a {
+  display: flex;
+  justify-content: space-between;
+}
+
 .moto-contain ul li a {
   display: flex;
   align-items: center;
@@ -123,6 +140,11 @@ form select {
 .moto-contain ul li > div {
   border: 1px solid grey;
   padding-left: 8px;
+}
+
+.bike-list .image {
+  width: 90px;
+  flex-basis: 30%;
 }
 
 .moto-contain ul li .image {
@@ -198,6 +220,14 @@ form select {
   padding: 8px 12px;
 }
 
+.del-contain ul li {
+  display: flex;
+  justify-content: space-between;
+
+  /* background-color: green; */
+  align-items: center;
+}
+
 .price-list li:nth-child(odd) {
   background-color: #e2e3e5;
 }
@@ -256,15 +286,64 @@ button:hover {
   margin-top: 21px;
 }
 
+.bike-list .details {
+  flex-basis: 70%;
+  padding: 0;
+}
+
+.bike-list .details h3 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.bike-list .details p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.del-contain {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.del-contain ul li .image {
+  width: 150px;
+  height: 150px;
+
+  /* flex: 1; */
+  background-color: #d6eeee;
+}
+
+.del-contain ul li .image img {
+  width: 100%;
+}
+
+.del-contain ul li .details {
+  display: flex;
+  padding-left: 12px;
+  flex: 3;
+}
+
+.del-contain ul li .details button {
+  /* background: none; */
+
+  /* border: none; */
+  font-size: 28px;
+
+  /* width: 20px; */
+}
+
 @media only screen and (max-width: 600px) {
   .container {
     flex-direction: column;
   }
 
   .sub-container {
-    padding: 12px;
+    padding: 0;
     margin: 0;
     width: 100%;
+
+    /* background-color: chocolate; */
   }
 
   .container .content {

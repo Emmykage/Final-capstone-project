@@ -8,10 +8,25 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: var(--color-white);
-
-  /* background-color: green; */
+  z-index: 99;
+  transition: var(--transition);
 
   /* flex: 3; */
+}
+
+nav::after {
+  content: ' ';
+  height: 30px;
+  width: 60px;
+  background-color: rgb(186, 107, 186);
+  position: absolute;
+  right: -60px;
+  bottom: 20%;
+  border-radius: 0 15px 15px 0;
+}
+
+nav:hover::after {
+  background-color: rgb(65, 59, 72);
 }
 
 .nav-links {
@@ -80,10 +95,14 @@ nav {
   color: orangered;
 }
 
+.limit-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .nav-bar {
     position: absolute;
-    z-index: 1;
+    z-index: 19;
   }
 
   nav {
@@ -106,13 +125,22 @@ nav {
   }
 
   .nav-bar .nav-menu.active {
-    display: flex;
-    position: absolute;
+    /* display: flex; */
+    position: fixed;
     top: 0;
     left: 0;
   }
 
   .nav-bar .nav-menu {
+    /* display: none; */
+    left: -100%;
+  }
+
+  .limit {
     display: none;
+  }
+
+  .limit-mobile {
+    display: block;
   }
 }

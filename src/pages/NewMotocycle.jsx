@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 
 const NewMotocycle = () => {
   const [model , setModel] = useState('');
-  const [color , setColor] = useState('');
+  const [description , setDescription] = useState('');
   const [image, setImage ] = useState('');
+  const [duration, setDuration ] = useState('');
+  const [price, setPrice ] = useState('');
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -12,13 +14,14 @@ const NewMotocycle = () => {
   }
   return (
     <div className='sub-container'>
+      <h2> Add New Motocycle</h2>
       <div>
 
     
     <form onSubmit={handleSubmit}>
      <div>
     
-       <label>Bike model</label>
+       <label>Motocycle model</label>
        <input 
        type='text' 
        value={model}
@@ -28,18 +31,36 @@ const NewMotocycle = () => {
        </div>
        <div>
     
-       <label>Bike color</label>
+       <label>MOtocycle duration</label>
        <input type='text'
-      value={color}
-      onChange={(e)=> setColor(e.target.value)}
+      value={duration}
+      onChange={(e)=> setDuration(e.target.value)}
       />
         
        </div>
        <div>
     
-       <label>Image</label>
+       <label>Motocycle description</label>
+       <input type='text'
+      value={description}
+      onChange={(e)=> setDescription(e.target.value)}
+      />
+        
+       </div>
+       <div>
+    
+       <label>Motocycle price</label>
+       <input type='number'
+      value={price}
+      onChange={(e)=> setPrice(e.target.value)}
+      />
+        
+       </div>
+       <div>
+    
+       <label>avatar</label>
        <input 
-       type='text' 
+       type='url' 
        value={image}
        onChange={(e)=> setImage(e.target.value)}
        />

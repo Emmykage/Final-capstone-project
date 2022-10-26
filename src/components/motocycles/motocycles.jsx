@@ -9,18 +9,15 @@ const Bikes = (props) => {
         <div className='image'>
             <img src={photo} />
         </div>
-        <div>
-            <span>{model}</span>
-        </div>
-        <div>
+        <div className='details'>
+            <h3>{model}</h3>
             <span>{color}</span>
+            <p> {description}</p>
         </div>
-<div>
-    <p>
-        {description}
-    </p>
-</div>
-</Link>
+        <div>
+       
+        </div>
+        </Link>
     </li>
   )
 }

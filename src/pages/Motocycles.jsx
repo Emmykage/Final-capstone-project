@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Bikes from '../components/bikes/Bikes'
+import Bikes from '../components/motocycles/motocycles'
 // import { useDispatch, useSelector, shallowEqual } from 'react-redux'
 
 
@@ -37,7 +37,9 @@ const Motocycles = () => {
   // }, []);
   return (
     <div className='sub-container'>
+       
       <div className='moto-contain'> 
+      <h2>Motocycles</h2>
       <ul>
         {bikes.map((data) =>(
           <Bikes key={data.id} photo={data.photo} model={data.model} color={data.color} description={data.description} id={data.id}/>
