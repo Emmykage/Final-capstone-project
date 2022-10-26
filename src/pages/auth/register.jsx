@@ -38,6 +38,9 @@ const RegisterScreen = (props) => {
              <Link to="/auth/login"> Sign in</Link>
             </span>
           </div>
+          {
+            error && <div className="alert alert-danger">{error.message}</div>
+          }
 
           <div className="form-group ">
             <label>Full Name</label>
