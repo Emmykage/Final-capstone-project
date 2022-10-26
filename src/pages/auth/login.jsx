@@ -1,14 +1,21 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import ApiClient from '../../services/ApiClient';
 
 const LoginScreen = (props) => {
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    props.history.push("/");
+    if (name && password) {
+      const response = await  ApiClient.loginUser({name, password});
+      if (response && response.status === 200) {
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        props.history.push("/");
+      }
+    }
   };
   return (
     <div className="Auth-form-container">
