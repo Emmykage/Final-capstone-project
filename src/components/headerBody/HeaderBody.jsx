@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Navigation } from "swiper";
+import { Link } from 'react-router-dom'
 
 const data_image = [{
     id: 1,
@@ -56,6 +57,38 @@ export const HeaderBody = () => {
             <div className='items'>
                 <div className='limit'>
                 <Swiper
+                    slidesPerView={3}
+                    pagination={{
+                    type: "progressbar",
+                    }}
+                    navigation={true}
+                     modules={[Pagination, Navigation]}
+                    className="mySwiper"
+                >
+
+                 {data_image.map(data =>(
+                    <SwiperSlide>
+                        <Link to={`details/${data.id}`}>
+                        <div key={data.id}>
+                            <div className='item-img'>
+                                <img src={data.image} />
+                            </div>
+                            <div className='item-details'>
+                                <h3>{data.header}</h3>
+                                <p>{data.paragraph}</p>
+                            </div>
+                        </div>
+                        </Link>
+                    </SwiperSlide>
+                      )) }
+
+                </Swiper>
+                      
+                </div>
+
+                {/* =========================mobile view ======================== */}
+                <div className='limit-mobile'>
+                <Swiper
                     // slidesPerView={3}
                     pagination={{
                     type: "progressbar",
@@ -67,6 +100,7 @@ export const HeaderBody = () => {
 
                  {data_image.map(data =>(
                     <SwiperSlide>
+                        <Link to={`details/${data.id}`}>
                         <div key={data.id}>
                             <div className='item-img'>
                                 <img src={data.image} />
@@ -76,6 +110,7 @@ export const HeaderBody = () => {
                                 <p>{data.paragraph}</p>
                             </div>
                         </div>
+                        </Link>
                     </SwiperSlide>
                       )) }
 
