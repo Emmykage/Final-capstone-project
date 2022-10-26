@@ -2,9 +2,17 @@ import React from 'react';
 import { Link } from "react-router-dom";
 
 const LoginScreen = (props) => {
+  const [name, setName] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    props.history.push("/");
+  };
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Sign In</h3>
           <div className="text-center form-desc">
@@ -19,6 +27,7 @@ const LoginScreen = (props) => {
               type="email"
               className="form-control "
               placeholder="Enter email"
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="form-group">
@@ -27,6 +36,7 @@ const LoginScreen = (props) => {
               type="password"
               className="form-control"
               placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="submissions">

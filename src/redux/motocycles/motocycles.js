@@ -1,4 +1,4 @@
-import ApiClient from '../../service/Apiclient';
+import ApiClient from '../../services/Apiclient';
 
 const FETCHING_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHING_MOTOCYCLES';
 const FETCHED_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHED_MOTOCYCLES';
