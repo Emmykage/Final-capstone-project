@@ -50,15 +50,15 @@ export default function reducer(state = [], action = {}) {
     case RESERVE_MOTOCYCLE:
       return state.map(
         (motocycle) => (
-            motocycle.id !== action.motocycle.id ?
-             motocycle 
-             : { ...motocycle, reserved: true }),
+          motocycle.id !== action.motocycle.id
+            ? motocycle
+            : { ...motocycle, reserved: true }),
       );
     case CANCEL_RESERVATION:
       return state.map(
         (motocycle) => (
-            motocycle.id !== action.motocycle.id ?
-            motocycle : { ...motocycle, reserved: false }),
+          motocycle.id !== action.motocycle.id
+            ? motocycle : { ...motocycle, reserved: false }),
       );
     default:
       return state;
