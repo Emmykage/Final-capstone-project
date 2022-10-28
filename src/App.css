@@ -262,21 +262,23 @@ button:hover {
   cursor: pointer;
   opacity: 0.7;
 }
-.screen-cont{
+
+.screen-cont {
   width: 100%;
   position: relative;
-  background-image: linear-gradient(rgba(4,9,30, 0.7),rgba(4,9,30, 0.7)), url("./../assets/img/image2.jpg");
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("./../assets/img/image2.jpg");
   background-position: center;
   background-size: cover;
   height: 100vh;
-
 }
-.screen-cont .btn-div{
+
+.screen-cont .btn-div {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
 .rep {
   text-align: left;
 }
