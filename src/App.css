@@ -266,8 +266,9 @@ button:hover {
 .screen-cont {
   width: 100%;
   position: relative;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("./../assets/img/image2.jpg");
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../src/assets/img/image3.jpg");
   background-position: center;
+  font-weight: 500;
   background-size: cover;
   height: 100vh;
 }
@@ -277,6 +278,11 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.screen-cont .btn-div button {
+  margin-right: 12px;
+  font-size: 18px;
 }
 
 .rep {
