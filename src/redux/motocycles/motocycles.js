@@ -1,15 +1,17 @@
 import ApiClient from '../../services/ApiClient';
 
+const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
 const FETCHING_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHING_MOTOCYCLES';
 const FETCHED_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHED_MOTOCYCLES';
 const RESERVE_MOTOCYCLE = 'spaceTravelers/motocycles/RESERVE_MOTOCYCLE';
 const CANCEL_RESERVATION = 'spaceTravelers/motocycles/CANCEL_RESERVATION';
-
+const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';
 export function fetchedMotocycles(motocycles) {
   const formattedmotocycles = motocycles.map((motocycle) => ({
     id: motocycle.id,
-    name: motocycle.name,
-    type: motocycle.rocket_type,
+    // name: motocycle.name,
+    name: motocycle.model,
+    // type: motocycle.rocket_type,
     avatar: motocycle.avatar,
     description: motocycle.description,
   }));
@@ -18,6 +20,16 @@ export function fetchedMotocycles(motocycles) {
     motocycles: formattedmotocycles,
   };
 }
+
+export const deleteMotocycle = (id) => async (dispatch) => {
+  await fetch(`${BASE_URL}/motorcycles/${id}`, {
+    method: 'DELETE',
+  });
+  dispatch({
+    type: DELETE_MOTOCYCLE,
+    id,
+  });
+};
 export function fetching() {
   return {
     type: FETCHING_MOTOCYCLES,
@@ -54,6 +66,10 @@ export default function reducer(state = [], action = {}) {
             ? motocycle
             : { ...motocycle, reserved: true }),
       );
+    case DELETE_MOTOCYCLE:
+      return [
+        ...state.filter((motocycle) => motocycle.id !== action.id),
+      ];
     case CANCEL_RESERVATION:
       return state.map(
         (motocycle) => (

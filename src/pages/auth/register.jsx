@@ -45,9 +45,10 @@ const RegisterScreen = (props) => {
           <div className="form-group ">
             <label>Full Name</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
               placeholder="e.g Jane Doe"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -66,6 +67,7 @@ const RegisterScreen = (props) => {
               type="password"
               className="form-control"
               placeholder="Enter password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>

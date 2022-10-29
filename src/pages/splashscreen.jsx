@@ -6,11 +6,10 @@ const Splashscreen = () => {
   return (
     <div className='screen-cont'>
       <div className='btn-div'>
-        <button><Link to='/auth/login'>Sign in</Link></button>
-        <button type='button'><Link to='/auth/register'>
-        Sing up
+       <Link to='/auth/login' className='splash'>Sign in</Link>
+      <Link to='/auth/register' className='splash'>       Sing up
         </Link>
-          </button>
+         
       </div>
     </div>
   )

@@ -225,6 +225,9 @@ form select {
   justify-content: space-between;
   margin-bottom: 12px;
   align-items: center;
+  width: 100%;
+
+  /* background-color: red; */
 }
 
 .price-list li:nth-child(odd) {
@@ -263,6 +266,8 @@ button:hover {
   opacity: 0.7;
 }
 
+/* =========================splash screen ======================== */
+
 .screen-cont {
   width: 100%;
   position: relative;
@@ -278,13 +283,36 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  /* display: block; */
+
+  /* width: 500px; */
+
+  /* background-color: green; */
 }
 
-.screen-cont .btn-div button {
+.screen-cont .btn-div .splash {
   margin-right: 12px;
-  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 12px 34px;
+  font-size: 13px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
 }
 
+.screen-cont .btn-div .splash:hover {
+  border: 1px solid #8410af;
+  background: #8f28de;
+  transition: 1s;
+}
+
+
+/* =========================================End splash screen================================== */
 .rep {
   text-align: left;
 }
@@ -327,11 +355,15 @@ button:hover {
   margin: auto;
 }
 
-.del-contain ul li .image {
-  width: 150px;
-  height: 150px;
+.del-contain ul {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+}
 
-  /* flex: 1; */
+.del-contain ul li .image {
+  width: 100px;
+  height: 100px;
   background-color: #d6eeee;
 }
 
@@ -342,16 +374,19 @@ button:hover {
 .del-contain ul li .details {
   display: flex;
   padding-left: 12px;
+  justify-content: space-between;
   flex: 3;
+  border: 1px solid grey;
+  border-radius: 0 40px 40px 0;
+  overflow: hidden;
+}
+
+.del-contain ul li .details:hover {
+  box-shadow: 0 0 1px 1px rgba(4, 9, 30, 0.7);
 }
 
 .del-contain ul li .details button {
-  /* background: none; */
-
-  /* border: none; */
   font-size: 28px;
-
-  /* width: 20px; */
 }
 
 @media only screen and (max-width: 600px) {
@@ -391,6 +426,19 @@ button:hover {
   .reserveBtn {
     margin: 4px auto;
     padding: 12px 48px;
+  }
+
+  .del-contain ul li .image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .del-contain ul li .details h3 {
+    font-size: 18px;
+  }
+
+  .del-contain ul li .details button {
+    font-size: 15px;
   }
 }
 

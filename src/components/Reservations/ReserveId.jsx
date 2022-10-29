@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 // import { Form } from 'react-router-dom'
 
 
-const ReserveForm = () => {
+const Reserve_id = () => {
+  const {motocycle_id} = useParams()
   const dispatch = useDispatch()
-const motocycles = useSelector((state) => state.motocycles)
-//  const user = useSelector((state) => state.user)
+const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
+ const user = useSelector((state) => state.user)
  const navigate = useNavigate();
 const [city, setCity] = useState('')
 const [date, setDate] = useState('')
@@ -32,18 +34,8 @@ const [model, setModel] = useState('')
       <div>
      
         <label>Select Motocycle</label>
-        <select className='model-selector'
-        value={motocycles[0]}
-        onChange={(e) =>{setModel(e.target.value)}}
-        >
-          <option>SELECT MOTOCYCLE </option>
-          {motocycles.map(moto =>(
-            <option key={moto.id} value={moto.id}>{moto.model}</option>
-            // <option> bike two</option>
-          ))}
-        
-        </select>
-         
+       
+         <input type='text' value={motocycle.model}/>
         </div>
         <div>
      
@@ -60,12 +52,12 @@ const [model, setModel] = useState('')
       
      </div>
 
-        {/* <div>
+        <div>
           
      
         <label>User name</label>
         <input type='text' value={user.name}/>
-         </div> */}
+         </div>
          <input type='submit' value='make reservation' />
     </form> 
     </div>
@@ -74,4 +66,4 @@ const [model, setModel] = useState('')
   )
 }
 
-export default ReserveForm
+export default Reserve_id

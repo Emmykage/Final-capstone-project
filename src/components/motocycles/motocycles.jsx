@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const Bikes = (props) => {
-    const {photo, model, color, description, id} = props
+    const {photo, model, description, id} = props
   return (
     <li className='bike-list'>
         <Link to={`/details/${id}`}>
@@ -11,7 +11,7 @@ const Bikes = (props) => {
         </div>
         <div className='details'>
             <h3>{model}</h3>
-            <span>{color}</span>
+            {/* <span>{color}</span> */}
             <p> {description}</p>
         </div>
         <div>

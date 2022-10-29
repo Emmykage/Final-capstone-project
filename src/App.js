@@ -14,6 +14,7 @@ import Register from './pages/auth/register';
 import ForgotPassword from './pages/auth/forgot-password';
 import ResetPassword from './pages/auth/reset-password';
 import Splashscreen from './pages/splashscreen';
+import ReserveId from './components/Reservations/ReserveId';
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
       <Route path="/new" element={<MainLayout><NewMotocycle /></MainLayout>} />
       <Route path="/reserve_form" element={<MainLayout><ReserveForm /></MainLayout>} />
       <Route path="/reservations" element={<MainLayout><Reservation /></MainLayout>} />
-
+      <Route path="/reserveId/:motocycle_id" element={<MainLayout><ReserveId /></MainLayout>} />
       <Route path="/delete" element={<MainLayout><Delete /></MainLayout>} />
       <Route path="/details/:id" element={<MainLayout><Details /></MainLayout>} />
       <Route path="/splash_page" element={<Splashscreen />} />

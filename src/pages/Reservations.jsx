@@ -31,6 +31,7 @@ const reservations = [{
   date: '2022-10-24'
 }]
 const Reservations = () => {
+  
   return (
     <div className='sub-container'>
 

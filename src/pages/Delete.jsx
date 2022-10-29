@@ -12,7 +12,7 @@ const bikes = [{
 },
 {
   id: 2,
-  model: 'Hyundai',
+  model: 'Toyota',
   color: 'black',
   photo: 'photo',
   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
@@ -20,7 +20,7 @@ const bikes = [{
 
 },{
   id: 3,
-  model: 'Hyundai',
+  model: 'Lexus',
   color: 'black',
   photo: 'photo',
   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
@@ -31,8 +31,7 @@ const bikes = [{
 const Delete = () => {
   // const bikes = useSelector((state)=> state.bikes)
   // const dispatch = useDispatch()
-
-  // const deleteBike = (id) =>{
+  // const handleDelete = () =>{
   //   dispatch(removeBike(id))
   // }
   return (
@@ -47,11 +46,11 @@ const Delete = () => {
             
             <li key={bike.id}>
               <div className='image'>
-                <img src="photo" alt='motocycle'/>
+                <img src={bike.avatar} alt='bike'/>
               </div>
               <div className='details'>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate</p>
-                <button><AiFillDelete/></button>
+                <h3>{bike.model}</h3>
+                <button onClick={handleDelete}><AiFillDelete/></button>
               </div>
            
           </li>
