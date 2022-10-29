@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import ApiClient from '../../services/ApiClient';
+import ApiClient from '../../services/Apiclient';
 
 const RegisterScreen = (props) => {
   const [name, setName] = React.useState("");
