@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import ApiClient from '../../services/Apiclient';
+import ApiClient from '../../services/ApiClient';
 
 const RegisterScreen = (props) => {
   const [name, setName] = React.useState("");
@@ -13,7 +13,9 @@ const RegisterScreen = (props) => {
     try {
       if (name && password) {
         const response = await  ApiClient.registerUser({name, password});
-        if (response && response.status === 200) {
+        // console.log({name, password})
+        if (response) {
+          console.log({name, password})
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
           props.history.push("/");

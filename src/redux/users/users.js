@@ -1,27 +1,11 @@
 import ApiClient from '../../services/ApiClient';
 
 const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
-const FETCHING_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHING_MOTOCYCLES';
-const FETCHED_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHED_MOTOCYCLES';
-const RESERVE_MOTOCYCLE = 'spaceTravelers/motocycles/RESERVE_MOTOCYCLE';
-const CANCEL_RESERVATION = 'spaceTravelers/motocycles/CANCEL_RESERVATION';
-const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';
-export function fetchedMotocycles(motocycles) {
-  const formattedmotocycles = motocycles.map((motocycle) => ({
-    id: motocycle.id,
-    // name: motocycle.name,
-    name: motocycle.model,
-    // type: motocycle.rocket_type,
-    avatar: motocycle.avatar,
-    description: motocycle.description,
-  }));
-  return {
-    type: FETCHED_MOTOCYCLES,
-    motocycles: formattedmotocycles,
-  };
-}
+const FETCHING_USER = 'users/user/GET_USER';
 
-export const deleteMotocycle = (id) => async (dispatch) => {
+
+
+export const fetchUser = () => async (dispatch) => {
   await fetch(`${BASE_URL}/motorcycles/${id}`, {
     method: 'DELETE',
   });
@@ -32,7 +16,7 @@ export const deleteMotocycle = (id) => async (dispatch) => {
 };
 export function fetching() {
   return {
-    type: FETCHING_MOTOCYCLES,
+    type: FETCHING_USER,
   };
 }
 

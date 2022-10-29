@@ -13,7 +13,7 @@ export default class ApiClient {
     };
 
     static loginUser = ({ name, password }) => {
-      const response = fetch(`${this.BASE_URL}/login?name=${name}?password=${password}`, {
+      const response = fetch(`${this.BASE_URL}login?name=${name}?password=${password}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -22,12 +22,15 @@ export default class ApiClient {
       return response;
     };
 
-    static registerUser = ({ name, password }) => {
-      const response = fetch(`${this.BASE_URL}/create?name=${name}?password=${password}`, {
+    static registerUser = (userInfo) => {
+      // const response = fetch(`${this.BASE_URL}create?name=${name}?password=${password}`, {
+        const response = fetch(`${this.BASE_URL}create`, {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify(userInfo),
       });
       return response;
     };
