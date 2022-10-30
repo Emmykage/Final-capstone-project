@@ -7,6 +7,7 @@ import { GrClose } from 'react-icons/gr'
 import { BiCog } from 'react-icons/bi';
 import { CgChevronRightO } from 'react-icons/cg';
 import { useSelector } from 'react-redux';
+import Form from '../components/Reservations/Form';
 
 const Details = ( props ) => {
 
@@ -85,7 +86,8 @@ return (
 
       <div className={reserveSide ? 'sideform showForm' : 'sideForm'}>
         <span onClick={showForm}  className='close-btn' ><GrClose/></span>
-      <form onSubmit={handleSubmit}>
+        <Form name={name}/>
+      {/* <form onSubmit={handleSubmit}>
       <div>
      
         <label>Select Motocycle</label>
@@ -109,12 +111,12 @@ return (
 
         <div>
           
-{/*      
+     
         <label>User name</label>
-        <input type='text' value={user.name}/> */}
+        <input type='text' value={user.name}/>
          </div>
          <input type='submit' value='make reservation' />
-    </form> 
+    </form>  */}
 
       </div>
     </div>
