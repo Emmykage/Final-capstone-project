@@ -212,6 +212,35 @@ form select {
   list-style: none;
 }
 
+.sideForm {
+  position: fixed;
+  width: 680px;
+  top: 0;
+  right: -100%;
+  transition: var(--transition);
+  height: 100vh;
+}
+
+.showForm {
+  position: absolute;
+  right: 0;
+  width: 500px;
+  top: 0;
+  background-color: rgb(202, 199, 199);
+  height: 100vh;
+  transition: var(--transition);
+}
+
+.showForm form {
+  padding: 0 20px;
+}
+
+.close-btn {
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+}
+
 .price-list li {
   text-decoration: none;
   display: flex;

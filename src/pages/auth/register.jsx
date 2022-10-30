@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import ApiClient from '../../services/ApiClient';
+import { useNavigate } from 'react-router-dom';
 
 const RegisterScreen = (props) => {
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(null);
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
     setError(null);
     try {
       if (name && password) {
         const response = await  ApiClient.registerUser({name, password});
         // console.log({name, password})
+        navigate('/')
         if (response) {
           console.log({name, password})
           localStorage.setItem("token", response.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.user));
           props.history.push("/");
+         
         } else {
           setError({message: "Invalid credentials"});
         }
