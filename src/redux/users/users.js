@@ -1,29 +1,36 @@
 // import ApiClient from '../../services/ApiClient';
 
-// const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
-// const FETCH_USER = 'users/user/GET_USER';
+const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const FETCH_USER = 'users/user/GET_USER';
 
-// export const fetchUser = () => async (dispatch) => {
-//   await fetch(`${BASE_URL}create`, {
-//     method: 'DELETE',
-//   });
-//   dispatch({
-//     type: FETCH_USER,
-//     id,
-//   });
-// };
+export default function userReducer(state = [], action) {
+  switch (action.type) {
+    case FETCH_USER:
+      return action.payload;
 
-// export const cancelReservation = (motocycle) => ({
-//   type: CANCEL_RESERVATION,
-//   motocycle,
-// });
+    default:
+      return state;
+  }
+}
 
-// export default function reducer(state = [], action = {}) {
-//   switch (action.type) {
-//     case FETCHING_USER:
-//       return 'fetching motocycles...';
+export const registerUser = (userInfo) => async () => {
+  await fetch(`${BASE_URL}create`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userInfo),
+  });
+};
 
-//     default:
-//       return state;
-//   }
-// }
+export const loginUser = (userInfo) => async () => {
+  const response = await fetch(`${BASE_URL}login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(userInfo),
+  }).then((res) => res.json()).then((res) => res.token);
+  localStorage.setItem('token', response);
+  return response;
+};

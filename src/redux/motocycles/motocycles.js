@@ -1,40 +1,37 @@
 import ApiClient from '../../services/ApiClient';
 
 const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
-const FETCHING_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHING_MOTOCYCLES';
-const FETCHED_MOTOCYCLES = 'spaceTravelers/motocycles/FETCHED_MOTOCYCLES';
-const RESERVE_MOTOCYCLE = 'spaceTravelers/motocycles/RESERVE_MOTOCYCLE';
-const CANCEL_RESERVATION = 'spaceTravelers/motocycles/CANCEL_RESERVATION';
+const FETCHED_MOTOCYCLES = 'motocycles/motocycle/FETCHING_MOTOCYCLES';
 const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';
-export function fetchedMotocycles(motocycles) {
-  const formattedmotocycles = motocycles.map((motocycle) => ({
-    id: motocycle.id,
-    // name: motocycle.name,
-    name: motocycle.model,
-    // type: motocycle.rocket_type,
-    avatar: motocycle.avatar,
-    description: motocycle.description,
-  }));
-  return {
-    type: FETCHED_MOTOCYCLES,
-    motocycles: formattedmotocycles,
-  };
+
+export default function reducer(state = [], action) {
+  switch (action.type) {
+    case FETCHED_MOTOCYCLES:
+      return [...action.payload];
+    case DELETE_MOTOCYCLE:
+      return [
+        ...state.filter((motocycle) => motocycle.id != action.id),
+      ];
+    default:
+      return state;
+  }
 }
 
 export const deleteMotocycle = (id) => async (dispatch) => {
+  const token = localStorage.getItem('token');
   await fetch(`${BASE_URL}/motorcycles/${id}`, {
     method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+
   });
   dispatch({
     type: DELETE_MOTOCYCLE,
     id,
   });
 };
-export function fetching() {
-  return {
-    type: FETCHING_MOTOCYCLES,
-  };
-}
 
 export const fetchMotocycles = () => async (dispatch) => {
   dispatch(fetching());
@@ -43,40 +40,40 @@ export const fetchMotocycles = () => async (dispatch) => {
     dispatch(fetchedMotocycles(response));
   }, 1000);
 };
-export const reserveMotocycle = (motocycle) => ({
-  type: RESERVE_MOTOCYCLE,
-  motocycle,
-});
 
-export const cancelReservation = (motocycle) => ({
-  type: CANCEL_RESERVATION,
-  motocycle,
-});
+export const addMotorcycle = (data) => async () => {
+  const token = localStorage.getItem('token');
+  await fetch(`${BASE_URL}motorcycles`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+    body: JSON.stringify(data),
+  });
+};
 
-export default function reducer(state = [], action = {}) {
-  switch (action.type) {
-    case FETCHING_MOTOCYCLES:
-      return 'fetching motocycles...';
-    case FETCHED_MOTOCYCLES:
-      return [...action.motocycles];
-    case RESERVE_MOTOCYCLE:
-      return state.map(
-        (motocycle) => (
-          motocycle.id !== action.motocycle.id
-            ? motocycle
-            : { ...motocycle, reserved: true }),
-      );
-    case DELETE_MOTOCYCLE:
-      return [
-        ...state.filter((motocycle) => motocycle.id !== action.id),
-      ];
-    case CANCEL_RESERVATION:
-      return state.map(
-        (motocycle) => (
-          motocycle.id !== action.motocycle.id
-            ? motocycle : { ...motocycle, reserved: false }),
-      );
-    default:
-      return state;
-  }
-}
+export const fetchedMotocycles = () => async (dispatch) => {
+  const token = localStorage.getItem('token');
+  const response = await fetch(`${BASE_URL}motorcycles`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
+
+  });
+  const motorcycles = await response.json();
+  const formattedmotocycles = motorcycles.map((motocycle) => ({
+    id: motocycle.id,
+    model: motocycle.model,
+    avatar: motocycle.avatar,
+    description: motocycle.description,
+    price: motocycle.prices,
+  }));
+  dispatch({
+    type: FETCHED_MOTOCYCLES,
+    payload: formattedmotocycles,
+
+  });
+};

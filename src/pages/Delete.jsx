@@ -1,6 +1,9 @@
-import React from 'react'
-import {AiFillDelete} from 'react-icons/ai'
-// import {useDispatch, useSelector} from 'react-redux'
+import React, { useEffect } from 'react'
+
+import {useDispatch, useSelector} from 'react-redux'
+import Motocycles from '../components/DeletePage'
+
+import { deleteMotocycle, fetchedMotocycles } from '../redux/motocycles/motocycles'
 
 const bikes = [{
   id: 1,
@@ -29,11 +32,16 @@ const bikes = [{
 
 
 const Delete = () => {
-  // const bikes = useSelector((state)=> state.bikes)
-  // const dispatch = useDispatch()
-  // const handleDelete = () =>{
-  //   dispatch(removeBike(id))
-  // }
+  const motocycles = useSelector((state)=> state.motocycles)
+  const dispatch = useDispatch()
+  const handleDelete = (id) =>{
+    dispatch(deleteMotocycle(id))
+  }
+
+  // useEffect(()=>{
+  //   dispatch(fetchedMotocycles())
+  // },[])
+console.log(motocycles)
   return (
 
 
@@ -42,44 +50,14 @@ const Delete = () => {
       <div className='del-contain'>
         <h2> Delete motocycle</h2>
         <ul>
-          {bikes.map((bike) =>(
-            
-            <li key={bike.id}>
-              <div className='image'>
-                <img src={bike.avatar} alt='bike'/>
-              </div>
-              <div className='details'>
-                <h3>{bike.model}</h3>
-                <button onClick={handleDelete}><AiFillDelete/></button>
-              </div>
-           
-          </li>
-
-
-
+          {motocycles.map((bike) =>(
+          
+            <Motocycles key={bike.id} id={bike.id}model={bike.model} avatar={bike.avatar} handleDelete={handleDelete}  />
+        
           ))}
         
         </ul>
       </div>
-
-      {/* <h1>Delete bikes</h1>
-      <div className='delete_bike'>
-        <h1>Delete: bike</h1>
-        <ul>
-          {bikes.map((bike)=>(
-            <li key={bike.id}>
-              <div>
-                <img src={bike.photo} alt='motocycle'/>
-              </div>
-              <div>
-               <p> {bike.model}</p>
-              </div>
-              <button type='button' onClick={deleteBike(bike.id)}></button>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-      
     </div>
   )
 }

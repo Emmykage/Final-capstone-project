@@ -1,32 +1,23 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import ApiClient from '../../services/ApiClient';
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux/users/users';
 
-const LoginScreen = (props) => {
+const LoginScreen = () => {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [error, setError] = React.useState(null);
 
   const handleSubmit = async (e) => {
+ 
     e.preventDefault();
-    setError(null);
-    try {
-      if (name && password) {
-        const response = await  ApiClient.loginUser({name, password});
-        if (response && response.status === 200) {
-          localStorage.setItem("token", response.data.token);
-          localStorage.setItem("user", JSON.stringify(response.data.user));
-          props.history.push("/");
-        } else {
-          setError({message: "Invalid credentials"});
-        }
-      } else{
-        setError({message: "Please enter both your name and password"});
-      }
-    } catch (error) {
-      setError({message: "Invalid credentials"});
-    }
-  };
+    dispatch(loginUser({name, password}))
+    navigate('/')
+
+  }
+
   return (
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
@@ -47,6 +38,7 @@ const LoginScreen = (props) => {
               type="text"
               className="form-control "
               placeholder="Enter your name"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -56,6 +48,7 @@ const LoginScreen = (props) => {
               type="password"
               className="form-control"
               placeholder="Enter password"
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
@@ -73,3 +66,9 @@ const LoginScreen = (props) => {
   )
 }
 export default LoginScreen;
+
+
+
+
+
+

@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { addMotorcycle } from '../redux/motocycles/motocycles';
+
 
 const NewMotocycle = () => {
+  const dispatch = useDispatch()
   const [model , setModel] = useState('');
   const [description , setDescription] = useState('');
   const [image, setImage ] = useState('');
   const [duration, setDuration ] = useState('');
   const [price, setPrice ] = useState('');
+  const [avatar, setAvatar] = useState('')
 
   const handleSubmit = (e)=>{
     e.preventDefault();
-    const data = {model, color, image}
-    console.log(data)
+    const data = {model, duration,avatar, description, price}
+    dispatch(addMotorcycle(data))
+    
   }
   return (
     <div className='sub-container'>
@@ -62,7 +68,7 @@ const NewMotocycle = () => {
        <input 
        type='url' 
        value={image}
-       onChange={(e)=> setImage(e.target.value)}
+       onChange={(e)=> setAvatar(e.target.value)}
        />
         </div>
         <input type='submit' value='make reservation' />

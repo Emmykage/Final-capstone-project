@@ -1,10 +1,9 @@
 
 import React from 'react'
 import Bikes from '../components/motocycles/motocycles'
-import { useSelector, shallowEqual } from 'react-redux'
-import ApiClient from '../services/ApiClient'
-// import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-
+import { useSelector, shallowEqual, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchedMotocycles } from '../redux/motocycles/motocycles'
 
 const bikes = [{
   id: 1,
@@ -33,14 +32,12 @@ const bikes = [{
 
 const Motocycles = () => {
   const motocycles = useSelector((state) => state.motocycles, shallowEqual)
-  // const dispatch = useDispatch();
-  // useEffect(()=>{
-  //   dispatch(fetchMotocycles());
-  // }, []);
+  const dispatch = useDispatch()
 
-  const loadPage = async () => {
-  await  ApiClient.fetchMotocycles();}
-  loadPage()
+  useEffect(()=>{
+    dispatch(fetchedMotocycles());
+  }, []);
+
   return (
     <div className='sub-container'>
        
@@ -48,7 +45,7 @@ const Motocycles = () => {
       <h2>Motocycles</h2>
       <ul>
         {motocycles.map((data) =>(
-          <Bikes key={data.id} photo={data.photo} model={data.model} description={data.description} id={data.id}/>
+          <Bikes key={data.id} photo={data.avatar} model={data.model} description={data.description} id={data.id}/>
         )
         )}
       </ul>
