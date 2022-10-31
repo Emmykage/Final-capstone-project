@@ -1,35 +1,19 @@
 import React from 'react';
+// import { useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+// import { Navigate } from 'react-router-dom';
 import Navigation from '../components/nav/Navigation';
-import { Navigate } from 'react-router-dom';
 
-const MainLayout = ({ children }) => {
-  // const navigate = useNavigate()
-const {user} = useSelector((state) => state.user);
-console.log(user)
-  const isAuthenticated = user;
-  
-  
-  return(
-    <>
-    {isAuthenticated ? (
-      <>
+const MainLayout = ({ children }) => (
+
   <div className="container">
     <Navigation />
     <div className="content">
-    
       {children}
     </div>
   </div>
-  </>
-    ) : (
-      <Navigate to='/' />
-    )
 
-}
-  </>
-)};
-  
+);
 MainLayout.propTypes = {
   children: PropTypes.node.isRequired,
 };

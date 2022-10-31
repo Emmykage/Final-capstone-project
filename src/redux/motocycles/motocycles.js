@@ -1,5 +1,3 @@
-import ApiClient from '../../services/ApiClient';
-
 const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
 const FETCHED_MOTOCYCLES = 'motocycles/motocycle/FETCHING_MOTOCYCLES';
 const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';
@@ -31,14 +29,6 @@ export const deleteMotocycle = (id) => async (dispatch) => {
     type: DELETE_MOTOCYCLE,
     id,
   });
-};
-
-export const fetchMotocycles = () => async (dispatch) => {
-  dispatch(fetching());
-  setTimeout(async () => {
-    const response = await ApiClient.fetchMotocycles();
-    dispatch(fetchedMotocycles(response));
-  }, 1000);
 };
 
 export const addMotorcycle = (data) => async () => {

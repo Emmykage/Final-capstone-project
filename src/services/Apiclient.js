@@ -19,7 +19,7 @@ export default class ApiClient {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(userInfo),
-      })
+      });
       // .then((res) => res.json()).then((res) => res.token);
       // console.log(response)
       return response;

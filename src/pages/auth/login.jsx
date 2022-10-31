@@ -10,7 +10,7 @@ const LoginScreen = () => {
   const navigate = useNavigate()
   const [name, setName] = React.useState("");
   const [password, setPassword] = React.useState("");
-  const [error, setError] = React.useState(null);
+  // const [error, setError] = React.useState(null);
   const user = useSelector((state) => state.user)
   console.log(user)
 
@@ -55,7 +55,7 @@ const LoginScreen = () => {
             </span>
           </div>
           {
-            error && <div className="alert alert-danger">{error.message}</div>
+            user.error && <div className="alert alert-danger">{user.error}</div>
           }
           <div className="form-group ">
             <label>User Name</label>

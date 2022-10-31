@@ -26,17 +26,18 @@ function App() {
         element={(
           <MainLayout>
             <Details
-               motocycle = {
+              motocycle={
                 {
-                image: 'https://firebasestorage.googleapis.com/v0/b/hospital-tracker-ug.appspot.com/o/vespa.png?alt=media&token=c88b23e4-ccd3-4cc5-8f63-14434b49c93b',
-                name: 'Vespa 946',
-                financeFee: 129,
-                purchaseFee: 249,
-                payable: 9879,
-                duration: 48,
-                id: 1
-                
-              }}
+                  image: 'https://firebasestorage.googleapis.com/v0/b/hospital-tracker-ug.appspot.com/o/vespa.png?alt=media&token=c88b23e4-ccd3-4cc5-8f63-14434b49c93b',
+                  name: 'Vespa 946',
+                  financeFee: 129,
+                  purchaseFee: 249,
+                  payable: 9879,
+                  duration: 48,
+                  id: 1,
+
+                }
+}
             />
           </MainLayout>
         )}

@@ -43,9 +43,9 @@ ul {
 }
 
 :root {
-  --color-bg-trans: rgba(151,191,15, 0.8);
+  --color-bg-trans: rgba(151, 191, 15, 0.8);
   --color-bg-variant: rgb(117, 150, 8);
-  --color-primary: rgba(151,191,15);
+  --color-primary: rgba(151, 191, 15);
   --color-primary-var: rgb(31, 31, 31);
   --color-white: #fff;
   --color-abs: rgb(255, 208, 164, 0.7);
