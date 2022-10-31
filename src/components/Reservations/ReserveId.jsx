@@ -17,7 +17,7 @@ const [model, setModel] = useState('')
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    const user_id = user.id
+    const user_name = user_name
     const motorcycle_id = model.id
 
     const data = {user_id, motorcycle_id, date, city}

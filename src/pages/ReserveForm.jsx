@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchedMotocycles } from '../redux/motocycles/motocycles'
 // import { Form } from 'react-router-dom'
 
 
 const ReserveForm = () => {
   const dispatch = useDispatch()
 const motocycles = useSelector((state) => state.motocycles)
+console.log(motocycles)
+useEffect(()=>{
+  dispatch(fetchedMotocycles());
+}, []);
 //  const user = useSelector((state) => state.user)
  const navigate = useNavigate();
 const [city, setCity] = useState('')
@@ -33,12 +39,12 @@ const [model, setModel] = useState('')
      
         <label>Select Motocycle</label>
         <select className='model-selector'
-        value={motocycles[0]}
+        value={model}
         onChange={(e) =>{setModel(e.target.value)}}
         >
           <option>SELECT MOTOCYCLE </option>
-          {motocycles.map(moto =>(
-            <option key={moto.id} value={moto.id}>{moto.model}</option>
+          {motocycles.map(motocycle =>(
+            <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
             // <option> bike two</option>
           ))}
         

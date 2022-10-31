@@ -38,9 +38,6 @@ const Delete = () => {
     dispatch(deleteMotocycle(id))
   }
 
-  // useEffect(()=>{
-  //   dispatch(fetchedMotocycles())
-  // },[])
 console.log(motocycles)
   return (
 

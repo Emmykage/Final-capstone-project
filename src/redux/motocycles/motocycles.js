@@ -10,7 +10,7 @@ export default function reducer(state = [], action) {
       return [...action.payload];
     case DELETE_MOTOCYCLE:
       return [
-        ...state.filter((motocycle) => motocycle.id != action.id),
+        ...state.filter((motocycle) => motocycle.id !== action.id),
       ];
     default:
       return state;

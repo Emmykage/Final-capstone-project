@@ -43,10 +43,10 @@ ul {
 }
 
 :root {
-  --color-bg: rgb(31, 31, 31);
-  --color-bg-variant: rgb(230, 230, 230);
-  --color-primary: rgb(84, 2, 84);
-  --color-primary-var: rgb(130, 8, 130);
+  --color-bg-trans: rgba(151,191,15, 0.8);
+  --color-bg-variant: rgb(117, 150, 8);
+  --color-primary: rgba(151,191,15);
+  --color-primary-var: rgb(31, 31, 31);
   --color-white: #fff;
   --color-abs: rgb(255, 208, 164, 0.7);
   --transition: all 0.4s ease;
@@ -226,7 +226,7 @@ form select {
   right: 0;
   width: 500px;
   top: 0;
-  background-color: rgb(202, 199, 199);
+  background-color: var(--color-bg-trans);
   height: 100vh;
   transition: var(--transition);
 }

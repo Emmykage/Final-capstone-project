@@ -9,9 +9,10 @@ import { CgChevronRightO } from 'react-icons/cg';
 import { useSelector } from 'react-redux';
 import Form from '../components/Reservations/Form';
 
-const Details = ( props ) => {
+const Details = ( motocycle ) => {
+  // const motocycle_id = motocycle.id
 
-  const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
+  const moto = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
   const user = useSelector((state) => state.user)
   // const navigate = useNavigate();
  const [city, setCity] = useState('')
@@ -36,35 +37,35 @@ const handleSubmit = (e) =>{
   // navigate( '/reservations')
   showForm()
 }
-const { name, image, financeFee, purchaseFee, payable, duration, id } = props;
+
 return (
     <div className='details-wrapper'>
       <div className='img-container'>
-        <img src={image} alt={name} />
+        <img src={motocycle.image} alt={motocycle.name} />
       </div>
       <div className='description'>
-        <h2>{name}</h2>
+        <h2>{motocycle.name}</h2>
         <p>- £350 upon every vespa purchase.</p>
 
         <ul className='price-list'>
           <li>
             <h6>Finance Fee</h6>
-            <p>£{financeFee}</p>
+            <p>£{motocycle.financeFee}</p>
           </li>
 
           <li>
             <h6>Option to purchase fee</h6>
-            <p>£{purchaseFee}</p>
+            <p>£{motocycle.purchaseFee}</p>
           </li>
 
           <li>
             <h6>total Amount Payable</h6>
-            <p>£{payable}</p>
+            <p>£{motocycle.payable}</p>
           </li>
         
           <li>
             <h6>Duration</h6>
-            <p>{duration} Months</p>
+            <p>{motocycle.duration} Months</p>
           </li>
         </ul>
         <p className='rep'>5.9% APR Representative</p>
@@ -86,38 +87,8 @@ return (
 
       <div className={reserveSide ? 'sideform showForm' : 'sideForm'}>
         <span onClick={showForm}  className='close-btn' ><GrClose/></span>
-        <Form name={name}/>
-      {/* <form onSubmit={handleSubmit}>
-      <div>
+        <Form model={moto.model}/>
      
-        <label>Select Motocycle</label>
-       
-         <input type='text' value={name} readOnly/>
-        </div>
-        <div>
-     
-        <label>City</label>
-        <input type='text' value={city}
-        onChange={(e)=> {setCity(e.target.value)} }/>
-         
-        </div>
-        <div>
-     
-     <label>Date</label>
-     <input type='date' value={date}
-     onChange={(e)=> {setDate(e.target.value)} }/>
-      
-     </div>
-
-        <div>
-          
-     
-        <label>User name</label>
-        <input type='text' value={user.name}/>
-         </div>
-         <input type='submit' value='make reservation' />
-    </form>  */}
-
       </div>
     </div>
 )
