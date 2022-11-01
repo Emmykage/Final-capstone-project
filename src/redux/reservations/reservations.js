@@ -77,7 +77,7 @@ const reserveSlice = createSlice({
 
 // }
 
-// export const addReservation = (data) => async () => {
+// export const postReservation = (data) => async () => {
 //     const token = localStorage.getItem('token')
 //     await fetch(`${BASE_URL}reservations`, {
 //         method: 'POST',

@@ -40,9 +40,9 @@ const Motocycles = () => {
 
   return (
     <div className='sub-container'>
-       
+        <h2>Motocycles</h2>
       <div className='moto-contain'> 
-      <h2>Motocycles</h2>
+     
       <ul>
         {motocycles.map((data) =>(
           <Bikes key={data.id} photo={data.avatar} model={data.model} description={data.description} id={data.id}/>

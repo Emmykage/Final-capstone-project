@@ -27,7 +27,7 @@ export const getmotocycle = (id) => async (dispatch) => {
     },
 
   }).then((res) => res.text());
- 
+
   dispatch({
     type: DELETE_MOTOCYCLE,
     payload: motocycle,

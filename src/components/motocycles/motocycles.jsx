@@ -11,7 +11,7 @@ const Bikes = (props) => {
         </div>
         <div className='details'>
             <h3>{model}</h3>
-            {/* <span>{color}</span> */}
+            
             <p> {description}</p>
         </div>
         <div>

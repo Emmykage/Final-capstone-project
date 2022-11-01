@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const Form = (props) => {
+  const user = localStorage.getItem('user')
     const {model, handleSubmit} = props
-    const user = useSelector((state) => state.user)
+    // const user = useSelector((state) => state.user)
     const [date, setDate ] = useState('')
     const [city, setCity] = useState('')
 console.log(model)
@@ -40,11 +41,11 @@ console.log(model)
       
      </div>
 
-        {/* <div>
+        <div>
           
          <label>User name</label>
-        <input type='text' value={user.name}/>
-         </div> */}
+        <input type='text' value={user}/>
+         </div>
          <input type='submit' value='make reservation' />
     </form> 
     </form>

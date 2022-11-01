@@ -13,14 +13,9 @@ import { useParams } from 'react-router-dom';
 const Details = ( ) => {
   const { id } = useParams()
   const user = localStorage.getItem('user')
-  // const user = useSelector((state) => state.user)
-  // const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id == id))
   const motocycles = useSelector((state) => state.motocycles)
-  // console.log(motocycles)
   const motocycle = motocycles.filter((moto) => moto.id == id )
-  // const keys = Object.keys(motocycle)
   console.log(motocycle.id)
-  // console.log(motocycle)
   console.log(id)
   const dispatch = useDispatch()
   useEffect(()=>{
@@ -34,12 +29,7 @@ const toggleForm = ()=>{
 }
 const handleSubmit = (e, formValues) =>{
   e.preventDefault();
-  // toggleForm()
-  // const data = {name, date, city}
   dispatch(postReservation(formValues))
-  // await sendReservation
-  // console.log(data)
-  // navigate( '/reservations')
   toggleForm()
 }
 
@@ -47,7 +37,7 @@ return (
     <>
       {motocycle.map((motocycle) => (
        <div className='details-wrapper'><div className='img-container'>
-        <img src={motocycle.model} alt={motocycle.model} />
+        <img src={motocycle.avatar} alt={motocycle.model} />
       </div>
       <div className='description'>
         <h2>{motocycle.model}</h2>

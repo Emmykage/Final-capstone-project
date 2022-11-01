@@ -34,6 +34,7 @@ const [model, setModel] = useState('')
 
     
     <div className='sub-container'>
+      <h2> Make Reservation</h2>
      <form onSubmit={handleSubmit}>
       <div>
      

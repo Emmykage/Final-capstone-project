@@ -20,7 +20,8 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 import { Link } from 'react-router-dom'
 
-const data_image = [{
+const data_image = [
+    {
     id: 1,
     image: img1,
     header: 'Hyundei Powrer Bike',
@@ -44,7 +45,8 @@ const data_image = [{
     header: 'Hyundei Powrer Bike',
     paragraph: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error, provident?'
     
-}]
+}
+]
 
 export const HeaderBody = () => {
   return (
@@ -53,6 +55,9 @@ export const HeaderBody = () => {
             <h1>Available Bikes</h1>
             <p>You need a ride across town? </p>
         </div>
+        {data_image.length < 1 ? 
+                    <div> There are no motocycles to select</div> 
+                : <div> please select </div>}
         <div className='header-body'>
             <div className='items'>
                 <div className='limit'>
@@ -65,7 +70,7 @@ export const HeaderBody = () => {
                      modules={[Pagination, Navigation]}
                     className="mySwiper"
                 >
-
+                    
                  {data_image.map(data =>(
                     <SwiperSlide>
                         <Link to={`details/${data.id}`}>
