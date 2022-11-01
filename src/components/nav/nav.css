@@ -28,23 +28,22 @@ nav:hover::after {
 }
 
 .nav-links {
-  margin-top: 67px;
+  margin-top: 37px;
   list-style: none;
   flex: 3;
   width: 100%;
   padding: 0;
-
-  /* background-color: blue; */
+}
+.nav-links h3{
+  padding-left: 8px;
 }
 
 .nav-links li {
-  /* background-color: aliceblue; */
   padding: 0;
   margin: 10px 0;
 }
 
 .nav-links li a {
-  /* background-color: var(--color-primary); */
   line-height: 40px;
   align-items: center;
   height: 100%;
@@ -72,10 +71,6 @@ nav:hover::after {
 
 .icon-div {
   text-align: left;
-
-  /* background-color: brown; */
-
-  /* align-self: flex-start; */
   margin: 18px 14px;
   display: none;
 }
@@ -123,14 +118,12 @@ nav:hover::after {
   }
 
   .nav-bar .nav-menu.active {
-    /* display: flex; */
     position: fixed;
     top: 0;
     left: 0;
   }
 
   .nav-bar .nav-menu {
-    /* display: none; */
     left: -100%;
   }
 

@@ -7,7 +7,7 @@ const Reservations = () => {
   const  reservations = useSelector((state) => state.reservations)
   const dispatch = useDispatch();
   useEffect(()=>{
-    // dispatch(getReservation())
+   
     dispatch(fetchReservation())
   })
 
@@ -26,7 +26,7 @@ const Reservations = () => {
       <tbody>
 
         {reservations.map((data, index) =>(
-          <Reservation model={data.model} city={data.city} date={data.date} key={index}/>
+          <Reservation model={data.motorcycle.model} city={data.city} date={data.date} id={data.id} key={index}/>
         ))}
        </tbody>
        </table>

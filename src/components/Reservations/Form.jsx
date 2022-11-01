@@ -18,7 +18,7 @@ console.log(model)
         
     //   }
   return (
-    <form>
+  
         <form onSubmit={(e) => handleSubmit(e, {user, date, city })}>
       <div>
      
@@ -48,7 +48,7 @@ console.log(model)
          </div>
          <input type='submit' value='make reservation' />
     </form> 
-    </form>
+  
   )
 }
 

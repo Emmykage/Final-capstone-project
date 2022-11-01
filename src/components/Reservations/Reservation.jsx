@@ -1,7 +1,13 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { deleteReservation } from '../../redux/reservations/reservations'
 
 const Reservation = (props) => {
-    const {model , city, date } = props
+  const dispatch = useDispatch()
+    const {model , city, date, id } = props
+    const handleDelete=()=>{
+      dispatch(deleteReservation(id))
+    }
   return (
     
    
@@ -9,6 +15,7 @@ const Reservation = (props) => {
     <td>{model}</td>
     <td>{city}</td>
     <td>{date}</td>
+    <td><button onClick={handleDelete}>delete</button></td>
     </tr>
    
   )

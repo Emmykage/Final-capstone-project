@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchedMotocycles } from '../redux/motocycles/motocycles'
-// import { Form } from 'react-router-dom'
+import { postReservation } from '../redux/reservations/reservations'
 
 
 const ReserveForm = () => {
@@ -14,21 +14,21 @@ useEffect(()=>{
   dispatch(fetchedMotocycles());
 }, []);
 //  const user = useSelector((state) => state.user)
- const navigate = useNavigate();
+//  const navigate = useNavigate();
 const [city, setCity] = useState('')
 const [date, setDate] = useState('')
 const [model, setModel] = useState('')
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    const user_id = user.id
-    const motorcycle_id = model.id
+    // const user_id = user.id
+    const motorcycle_id = model
 
-    const data = {user_id, motorcycle_id, date, city}
-    dispatch(postReservation())
-    // await sendReservation
-    console.log(data)
-    navigate( '/reservations')
+    const data = { motorcycle_id, date, city}
+    dispatch(postReservation(data))
+
+    // console.log(data)
+    // navigate( '/reservations')
   }
   return (
 

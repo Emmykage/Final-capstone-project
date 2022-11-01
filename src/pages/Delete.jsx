@@ -9,7 +9,7 @@ const Delete = () => {
   const motocycles = useSelector((state)=> state.motocycles)
   useEffect(()=>{
     dispatch(fetchedMotocycles())
-  })
+  },[])
   return (
 
 
