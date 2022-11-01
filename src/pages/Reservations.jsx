@@ -5,11 +5,12 @@ import { fetchReservation, getReservation } from '../redux/reservations/reservat
 
 const Reservations = () => {
   const  reservations = useSelector((state) => state.reservations)
+  console.log(reservations)
   const dispatch = useDispatch();
   useEffect(()=>{
    
     dispatch(fetchReservation())
-  })
+  }, [])
 
   return reservations.length > 0 ? (
     <div className='sub-container'>
@@ -26,7 +27,12 @@ const Reservations = () => {
       <tbody>
 
         {reservations.map((data, index) =>(
-          <Reservation model={data.motorcycle.model} city={data.city} date={data.date} id={data.id} key={index}/>
+          <Reservation 
+          // model={data.motorcycle.model} 
+          city={data.city}
+           date={data.date} 
+           id={data.id} 
+           key={index}/>
         ))}
        </tbody>
        </table>

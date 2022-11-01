@@ -17,7 +17,7 @@ const RegisterScreen = () => {
     
     e.preventDefault();
     setError(null);
-    dispatch(registerUser({name, password}))
+    dispatch(registerUser({user: {name, password}}))
     navigate('/auth/login')
   };
   return (

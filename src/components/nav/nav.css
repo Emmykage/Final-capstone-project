@@ -34,7 +34,8 @@ nav:hover::after {
   width: 100%;
   padding: 0;
 }
-.nav-links h3{
+
+.nav-links h3 {
   padding-left: 8px;
 }
 

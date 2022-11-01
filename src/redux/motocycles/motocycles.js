@@ -72,7 +72,7 @@ export const fetchedMotocycles = () => async (dispatch) => {
 
   });
   const motorcycles = await response.json();
-
+  console.log(response);
   dispatch({
     type: FETCHED_MOTOCYCLES,
     payload: motorcycles,

@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import logo from '../../assets/img/bike.png';
 
 const Navaigation = () => {
-  const user = localStorage.getItem('user')
+  const user = localStorage.getItem('user');
   const activeLink = 'link-bg-color';
   const normalLink = '';
 
@@ -35,7 +35,11 @@ const Navaigation = () => {
         </div>
 
         <ul className="nav-links">
-          <h3> Hello {user}</h3>
+          <h3>
+            {' '}
+            Hello
+            {user}
+          </h3>
 
           <li>
             <NavLink
