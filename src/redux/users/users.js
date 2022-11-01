@@ -36,7 +36,7 @@ export const loginUser = (userInfo, navigate) => async (dispatch) => {
       if (data.error) {
         alert(data.error);
       } else {
-      // console.log(data)
+
         localStorage.setItem('user', data.username);
         localStorage.setItem('token', data.token);
         if (data.username) {

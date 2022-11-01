@@ -10,8 +10,6 @@ nav {
   background-color: var(--color-white);
   z-index: 99;
   transition: var(--transition);
-
-  /* flex: 3; */
 }
 
 nav::after {

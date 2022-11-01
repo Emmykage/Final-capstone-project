@@ -14,12 +14,12 @@ const Details = ( ) => {
   const { id } = useParams()
   const user = localStorage.getItem('user')
   // const user = useSelector((state) => state.user)
-  const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id == id))
-  // const motocycles = useSelector((state) => state.motocycles)
+  // const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id == id))
+  const motocycles = useSelector((state) => state.motocycles)
   // console.log(motocycles)
-  // const motocycle = motocycles.find((moto) => moto.id == id )
-
-  console.log(motocycle)
+  const motocycle = motocycles.filter((moto) => moto.id == id )
+  // const keys = Object.keys(motocycle)
+  console.log(motocycle.id)
   // console.log(motocycle)
   console.log(id)
   const dispatch = useDispatch()
@@ -44,8 +44,9 @@ const handleSubmit = (e, formValues) =>{
 }
 
 return (
-    <div className='details-wrapper'>
-      {/* <div className='img-container'>
+    <>
+      {motocycle.map((motocycle) => (
+       <div className='details-wrapper'><div className='img-container'>
         <img src={motocycle.model} alt={motocycle.model} />
       </div>
       <div className='description'>
@@ -98,8 +99,11 @@ return (
         handleSubmit={handleSubmit}
         />
      
-      </div> */}
-    </div>
+      </div>
+      </div>
+      ))}
+      
+    </>
 )
 }
 

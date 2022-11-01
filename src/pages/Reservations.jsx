@@ -1,39 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import Reservation from '../components/Reservations/Reservation'
+import { fetchReservation, getReservation } from '../redux/reservations/reservations'
 
-
-const reservations = [{
-  name: 'toyo',
-  brand: 'toyota wheeler',
-  color: 'nevada',
-  date: '2022-10-24'
-},
-{
-  name: 'Hyunda',
-  brand: 'Hyundai alvero',
-  city: 'Las vegas',
-  date: '2022-10-24'
-},
-{
-  name: 'innoson',
-  brand: 'toyo',
-  city: 'nevada',
-  date: '2022-10-24'
-},
-{
-  model: 'toyo',
-  city: 'nevada',
-  date: '2022-10-24'
-},
-{
-  model: 'toyo',
-  city: 'nevada',
-  date: '2022-10-24'
-}]
 const Reservations = () => {
-  
-  return (
+  const  reservations = useSelector((state) => state.reservations)
+  const dispatch = useDispatch();
+  useEffect(()=>{
+    // dispatch(getReservation())
+    dispatch(fetchReservation())
+  })
+
+  return reservations.length > 0 ? (
     <div className='sub-container'>
+      <h2> My reservations </h2>
 
       <div className='res-contain'>
         <table>
@@ -53,7 +33,9 @@ const Reservations = () => {
     </div>
 
 </div>
-  )
-}
+  ): (
+    <div> <h3> You are yet to make a reservation </h3></div>
+  )}
+
 
 export default Reservations
