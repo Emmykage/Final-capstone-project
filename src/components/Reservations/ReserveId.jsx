@@ -1,19 +1,15 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
-import { fetchedMotocycles } from '../redux/motocycles/motocycles'
+import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 // import { Form } from 'react-router-dom'
 
 
-const ReserveForm = () => {
+const Reserve_id = () => {
+  const {motocycle_id} = useParams()
   const dispatch = useDispatch()
-const motocycles = useSelector((state) => state.motocycles)
-console.log(motocycles)
-useEffect(()=>{
-  dispatch(fetchedMotocycles());
-}, []);
-//  const user = useSelector((state) => state.user)
+const motocycle = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
+ const user = useSelector((state) => state.user)
  const navigate = useNavigate();
 const [city, setCity] = useState('')
 const [date, setDate] = useState('')
@@ -21,7 +17,7 @@ const [model, setModel] = useState('')
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    const user_id = user.id
+    const user_name = user_name
     const motorcycle_id = model.id
 
     const data = {user_id, motorcycle_id, date, city}
@@ -38,18 +34,8 @@ const [model, setModel] = useState('')
       <div>
      
         <label>Select Motocycle</label>
-        <select className='model-selector'
-        value={model}
-        onChange={(e) =>{setModel(e.target.value)}}
-        >
-          <option>SELECT MOTOCYCLE </option>
-          {motocycles.map(motocycle =>(
-            <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
-            // <option> bike two</option>
-          ))}
-        
-        </select>
-         
+       
+         <input type='text' value={motocycle.model}/>
         </div>
         <div>
      
@@ -66,12 +52,12 @@ const [model, setModel] = useState('')
       
      </div>
 
-        {/* <div>
+        <div>
           
      
         <label>User name</label>
         <input type='text' value={user.name}/>
-         </div> */}
+         </div>
          <input type='submit' value='make reservation' />
     </form> 
     </div>
@@ -80,4 +66,4 @@ const [model, setModel] = useState('')
   )
 }
 
-export default ReserveForm
+export default Reserve_id

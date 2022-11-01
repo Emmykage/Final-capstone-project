@@ -1,8 +1,9 @@
 
 import React from 'react'
 import Bikes from '../components/motocycles/motocycles'
-// import { useDispatch, useSelector, shallowEqual } from 'react-redux'
-
+import { useSelector, shallowEqual, useDispatch } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchedMotocycles } from '../redux/motocycles/motocycles'
 
 const bikes = [{
   id: 1,
@@ -30,19 +31,21 @@ const bikes = [{
 }]
 
 const Motocycles = () => {
-  // const motocycles = useSelector((state) => state.motocycles, shallowEqual)
-  // const dispatch = useDispatch();
-  // useEffect(()=>{
-  //   dispatch(fetchMotocycles());
-  // }, []);
+  const motocycles = useSelector((state) => state.motocycles, shallowEqual)
+  const dispatch = useDispatch()
+
+  useEffect(()=>{
+    dispatch(fetchedMotocycles());
+  }, []);
+
   return (
     <div className='sub-container'>
        
       <div className='moto-contain'> 
       <h2>Motocycles</h2>
       <ul>
-        {bikes.map((data) =>(
-          <Bikes key={data.id} photo={data.photo} model={data.model} color={data.color} description={data.description} id={data.id}/>
+        {motocycles.map((data) =>(
+          <Bikes key={data.id} photo={data.avatar} model={data.model} description={data.description} id={data.id}/>
         )
         )}
       </ul>

@@ -1,12 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './details.module.css';
 import { BsChevronRight } from 'react-icons/bs';
+import { GrClose } from 'react-icons/gr'
 import { BiCog } from 'react-icons/bi';
 import { CgChevronRightO } from 'react-icons/cg';
+import { useSelector } from 'react-redux';
+import Form from '../components/Reservations/Form';
 
-const Details = ({ motocycle }) => 
- (
+const Details = ( motocycle ) => {
+  // const motocycle_id = motocycle.id
+
+  const moto = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
+  const user = useSelector((state) => state.user)
+  // const navigate = useNavigate();
+ const [city, setCity] = useState('')
+ const [date, setDate] = useState('')
+//  const [model, setModel] = useState('')
+ 
+
+
+const [reserveSide, setReserveSide] = useState(false)
+const showForm = ()=>{
+  setReserveSide(!reserveSide)
+}
+const handleSubmit = (e) =>{
+  e.preventDefault();
+  // const user_id = user.id
+  // const motorcycle_id = model.id
+  showForm()
+  const data = {name, date, city}
+  dispatch(postReservation())
+  // await sendReservation
+  // console.log(data)
+  // navigate( '/reservations')
+  showForm()
+}
+
+return (
     <div className='details-wrapper'>
       <div className='img-container'>
         <img src={motocycle.image} alt={motocycle.name} />
@@ -48,12 +80,21 @@ const Details = ({ motocycle }) =>
           </svg>
         </div>
 
-        <button className='btn reserveBtn'><BiCog/> Reserve <CgChevronRightO/></button>
+        <button className='btn reserveBtn' onClick={showForm}><BiCog/> Reserve <CgChevronRightO/></button>
+      </div>
+
+
+
+      <div className={reserveSide ? 'sideform showForm' : 'sideForm'}>
+        <span onClick={showForm}  className='close-btn' ><GrClose/></span>
+        <Form model={moto.model}/>
+     
       </div>
     </div>
-  )
+)
+}
 
 Details.propTypes = {
-  motocycle : PropTypes.object.isRequired,
+  name : PropTypes.object.isRequired,
 };
 export default Details

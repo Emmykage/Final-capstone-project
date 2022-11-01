@@ -1,6 +1,9 @@
-import React from 'react'
-import {AiFillDelete} from 'react-icons/ai'
-// import {useDispatch, useSelector} from 'react-redux'
+import React, { useEffect } from 'react'
+
+import {useDispatch, useSelector} from 'react-redux'
+import Motocycles from '../components/DeletePage'
+
+import { deleteMotocycle, fetchedMotocycles } from '../redux/motocycles/motocycles'
 
 const bikes = [{
   id: 1,
@@ -12,7 +15,7 @@ const bikes = [{
 },
 {
   id: 2,
-  model: 'Hyundai',
+  model: 'Toyota',
   color: 'black',
   photo: 'photo',
   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
@@ -20,7 +23,7 @@ const bikes = [{
 
 },{
   id: 3,
-  model: 'Hyundai',
+  model: 'Lexus',
   color: 'black',
   photo: 'photo',
   description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
@@ -29,12 +32,13 @@ const bikes = [{
 
 
 const Delete = () => {
-  // const bikes = useSelector((state)=> state.bikes)
-  // const dispatch = useDispatch()
+  const motocycles = useSelector((state)=> state.motocycles)
+  const dispatch = useDispatch()
+  const handleDelete = (id) =>{
+    dispatch(deleteMotocycle(id))
+  }
 
-  // const deleteBike = (id) =>{
-  //   dispatch(removeBike(id))
-  // }
+console.log(motocycles)
   return (
 
 
@@ -43,44 +47,14 @@ const Delete = () => {
       <div className='del-contain'>
         <h2> Delete motocycle</h2>
         <ul>
-          {bikes.map((bike) =>(
-            
-            <li key={bike.id}>
-              <div className='image'>
-                <img src="photo" alt='motocycle'/>
-              </div>
-              <div className='details'>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate</p>
-                <button><AiFillDelete/></button>
-              </div>
-           
-          </li>
-
-
-
+          {motocycles.map((bike) =>(
+          
+            <Motocycles key={bike.id} id={bike.id}model={bike.model} avatar={bike.avatar} handleDelete={handleDelete}  />
+        
           ))}
         
         </ul>
       </div>
-
-      {/* <h1>Delete bikes</h1>
-      <div className='delete_bike'>
-        <h1>Delete: bike</h1>
-        <ul>
-          {bikes.map((bike)=>(
-            <li key={bike.id}>
-              <div>
-                <img src={bike.photo} alt='motocycle'/>
-              </div>
-              <div>
-               <p> {bike.model}</p>
-              </div>
-              <button type='button' onClick={deleteBike(bike.id)}></button>
-            </li>
-          ))}
-        </ul>
-      </div> */}
-      
     </div>
   )
 }
