@@ -18,7 +18,7 @@ const Reservation = (props) => {
         {/* <h4> { city } </h4> */}
         <h5> { date } </h5>
         <div className='action-btns'>
-          <span>{city}</span><button> Delete </button>
+          <span>{city}</span><button onClick={handleDelete}> Delete </button>
         </div>
 
       </div>

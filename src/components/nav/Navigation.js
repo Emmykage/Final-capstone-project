@@ -37,7 +37,9 @@ const Navaigation = () => {
         <ul className="nav-links">
           <h2>
             {' '}
-            Hello {user}
+            Hello
+            {' '}
+            {user}
           </h2>
 
           <li>
@@ -87,6 +89,14 @@ const Navaigation = () => {
               to="/delete"
             >
               Delete
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              onClick={() => localStorage.setItem('token', '')}
+              to="/splash_page"
+            >
+              Log out
             </NavLink>
           </li>
         </ul>
