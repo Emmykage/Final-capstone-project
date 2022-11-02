@@ -1,4 +1,4 @@
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const BASE_URL = 'https://motocycle-booking.herokuapp.com/api/v1/';
 const FETCHED_MOTOCYCLES = 'motocycles/motocycle/FETCHING_MOTOCYCLES';
 const FETCH_MOTOCYCLE = 'motocycles/motocycle/FETCHING_MOTOCYCLE';
 const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';

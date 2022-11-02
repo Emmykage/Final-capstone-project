@@ -1,6 +1,4 @@
-// import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-// import { createSlice } from '@reduxjs/toolkit';
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const BASE_URL = 'https://motocycle-booking.herokuapp.com/api/v1/';
 const GET_RESERVATIONS = 'reservations/reservation/GET_RESERVATIONS';
 const DELETE_RESERVATION = 'reservations/reservation/DELETE_RESERVATION';
 
@@ -64,43 +62,3 @@ export const deleteReservation = (id) => async (dispatch) => {
     id,
   });
 };
-// const reservationSlice = createSlice({
-//     name: 'reservation',
-//     initialState,
-//     reducers: {
-//         fetchReservation: (state)=>({
-//             ...state
-//         })
-//     },
-//     extraReducers: {
-//         [fetchReservation.pending]: (state) => ({
-//             ...state,
-//             isLoading: true
-//         }),
-
-//         [fetchReservation.fulfilled]: (state, action) =>({
-//             ...state,
-//             reservations: action.payload,
-//             isLoading: false
-
-//         }),
-//         [fetchReservation.rejected]: (state) => ({
-//             ...state,
-//             isLoading: false
-//         }),
-//         clearReservation: (state) =>{
-//             state.reservations = []
-//         }
-//     }
-// })
-
-// const fetchReservation = createAsyncThunk('bikes/fetchReservations', async (user) =>{
-//     const response = await fetch('localhost:300').then(res=> res.json);
-//     // const data = await response.json()
-
-//     return response;
-// })
-
-// export const { fetchReservation } = reserveSlice.actions;
-// export default reserveSlice.reducer;
-// export default reservationSlice.reducer

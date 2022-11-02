@@ -1,8 +1,5 @@
-// import ApiClient from '../../services/ApiClient';
-
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const BASE_URL = 'https://motocycle-booking.herokuapp.com/api/v1/';
 const LOGIN_SUCCESS = 'users/user/LOGIN_SUCCESS';
-// const FETCH_USER = 'users/user/GET_USER';
 
 export default function userReducer(state = {}, action) {
   switch (action.type) {
