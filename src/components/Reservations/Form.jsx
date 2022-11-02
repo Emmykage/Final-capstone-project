@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 const Form = (props) => {
   const user = localStorage.getItem('user')
-    const {model, handleSubmit} = props
+    const {model, motorcycle_id, handleSubmit} = props
     // const user = useSelector((state) => state.user)
     const [date, setDate ] = useState('')
     const [city, setCity] = useState('')
@@ -19,7 +19,7 @@ console.log(model)
     //   }
   return (
   
-        <form onSubmit={(e) => handleSubmit(e, {user, date, city })}>
+        <form onSubmit={(e) => handleSubmit(e, {motorcycle_id, date, city })}>
       <div>
      
         <label>Select Motocycle</label>
