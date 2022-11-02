@@ -2,6 +2,7 @@ import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { useDispatch } from 'react-redux';
 import { deleteMotocycle } from '../redux/motocycles/motocycles';
+import PropTypes from 'prop-types';
 
 const Motocycles = (props) => {
   const dispatch = useDispatch();
@@ -24,3 +25,9 @@ const Motocycles = (props) => {
 };
 
 export default Motocycles;
+
+Motocycles.propTypes = {
+  model: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+};

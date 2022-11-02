@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const Bikes = (props) => {
@@ -24,6 +25,12 @@ const Bikes = (props) => {
       </Link>
     </li>
   );
+};
+Bikes.propTypes = {
+  model: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
 };
 
 export default Bikes;

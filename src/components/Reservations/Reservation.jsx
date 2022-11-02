@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteReservation } from '../../redux/reservations/reservations';
-
+import PropTypes from 'prop-types';
 const Reservation = (props) => {
   const dispatch = useDispatch();
   const {
@@ -34,14 +34,15 @@ const Reservation = (props) => {
       </div>
     </div>
 
-  // <tr>
-  // <td>{model}</td>
-  // <td>{city}</td>
-  // <td>{date}</td>
-  // <td><button onClick={handleDelete}>delete</button></td>
-  // </tr>
 
   );
 };
 
 export default Reservation;
+Reservation.propTypes = {
+  model: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+};

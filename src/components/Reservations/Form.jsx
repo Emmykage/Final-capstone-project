@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-// import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Form = (props) => {
   const user = localStorage.getItem('user');
   const { model, motorcycle_id, handleSubmit } = props;
-
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
   console.log(model);
@@ -51,3 +50,9 @@ const Form = (props) => {
 };
 
 export default Form;
+
+Form.propTypes = {
+  model: PropTypes.string.isRequired,
+  hundleSubmit: PropTypes.func.isRequired,
+  motocylce_id: PropTypes.number.isRequired
+};
