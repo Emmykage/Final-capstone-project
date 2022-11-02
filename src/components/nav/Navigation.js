@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './nav.css';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
-// import logo from './bike.png'
-
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
