@@ -1,5 +1,6 @@
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const BASE_URL = 'https://motocycle-booking.herokuapp.com/api/v1/';
 const FETCHED_MOTOCYCLES = 'motocycles/motocycle/FETCHING_MOTOCYCLES';
+const FETCH_MOTOCYCLE = 'motocycles/motocycle/FETCHING_MOTOCYCLE';
 const DELETE_MOTOCYCLE = 'motocyles/motocycle/DELETE_MOTOCYCLE';
 
 export default function reducer(state = [], action) {
@@ -10,11 +11,28 @@ export default function reducer(state = [], action) {
       return [
         ...state.filter((motocycle) => motocycle.id !== action.id),
       ];
+    case FETCH_MOTOCYCLE:
+      return action.payload;
     default:
       return state;
   }
 }
+export const getmotocycle = (id) => async (dispatch) => {
+  const token = localStorage.getItem('token');
+  const motocycle = await fetch(`${BASE_URL}/motorcycles/${id}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: token,
+    },
 
+  }).then((res) => res.text());
+
+  dispatch({
+    type: DELETE_MOTOCYCLE,
+    payload: motocycle,
+  });
+};
 export const deleteMotocycle = (id) => async (dispatch) => {
   const token = localStorage.getItem('token');
   await fetch(`${BASE_URL}/motorcycles/${id}`, {
@@ -54,16 +72,9 @@ export const fetchedMotocycles = () => async (dispatch) => {
 
   });
   const motorcycles = await response.json();
-  const formattedmotocycles = motorcycles.map((motocycle) => ({
-    id: motocycle.id,
-    model: motocycle.model,
-    avatar: motocycle.avatar,
-    description: motocycle.description,
-    price: motocycle.prices,
-  }));
   dispatch({
     type: FETCHED_MOTOCYCLES,
-    payload: formattedmotocycles,
+    payload: motorcycles,
 
   });
 };

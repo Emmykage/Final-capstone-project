@@ -26,7 +26,6 @@ export default class ApiClient {
     };
 
     static registerUser = (userInfo) => {
-      // const response = fetch(`${this.BASE_URL}create?name=${name}?password=${password}`, {
       const response = fetch(`${this.BASE_URL}create`, {
 
         method: 'POST',

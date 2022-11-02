@@ -1,17 +1,48 @@
-import React from 'react'
-
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { deleteReservation } from '../../redux/reservations/reservations';
+import PropTypes from 'prop-types';
 const Reservation = (props) => {
-    const {model , city, date } = props
+  const dispatch = useDispatch();
+  const {
+    model, city, date, id, avatar,
+  } = props;
+  const handleDelete = () => {
+    dispatch(deleteReservation(id));
+  };
   return (
-    
-   
-    <tr>
-    <td>{model}</td>
-    <td>{city}</td>
-    <td>{date}</td>
-    </tr>
-   
-  )
-}
+    <div className="card">
+      <div className="card-img">
+        <img src={avatar} />
+      </div>
+      <div className="card-details">
+        <h4>
+          { model }
+          {' '}
+        </h4>
+        {/* <h4> { city } </h4> */}
+        <h5>
+          {' '}
+          { date }
+          {' '}
+        </h5>
+        <div className="action-btns">
+          <span>{city}</span>
+          <button onClick={handleDelete}> Delete </button>
+        </div>
 
-export default Reservation
+      </div>
+    </div>
+
+
+  );
+};
+
+export default Reservation;
+Reservation.propTypes = {
+  model: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+};
