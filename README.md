@@ -1,36 +1,35 @@
 # Final-capstone-project
 
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
 # Power Spokes
 
-Power-Spokes is a booking app for motocycles where users get to book a reservation for a motocycles
+Power-Spokes is a booking app for motorcycles where users get to book a reservation for a motorcycles
 
-You can see the backend for this project [here]().
+You can see the backend for this project(https://github.com/Addisu87/capstone-appointment-back-end).
 
 ## Kanban Board
 
 [Kanban Board Link]()
 
-- We are four (4) in this team. 
+- We are four (4) in this team.
 
   - @Emmykage
   - @Isaacpitwa
-  - @Addisu87 
+  - @Addisu87
 
 ### Our Kanban board
 
-link
+https://github.com/users/Emmykage/projects/4/views/1
 
 ## Built With
 
 - React
 - Redux
-- Deployed with Netifly
+- Deployed with Netlify
 
 ## Live Demo & Screenshots
 
->[POWER-STROKE](link)
+> [POWER-STROKE](link)
+
 <table>
 <tr>
 <td><img src="src/img/splash.png" alt="splash page"></td>
@@ -39,8 +38,6 @@ link
 </tr>
 </table>
 <div align="center"><img src="src/img/all-versions-picture.png" alt="all pages"></div>
-
-
 
 ## Getting Started
 
@@ -98,12 +95,11 @@ npm test
 
 ## Authors
 
-## 👤 Menanya Morris
+👤 **Addisu Haile**
 
-- GitHub: [@emmykage](https://github.com/emmykage)
-- Twitter: [@emmykage](https://twitter.com/emmykage)
-- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
-
+- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
+- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
+- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
 
 ## 👤 Isaac Pitwa
 
@@ -111,15 +107,11 @@ npm test
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
 
+## 👤 Menanya Morris
 
-
-👤 **Addisu Haile**
-
-- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
-- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
-- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
-
-
+- GitHub: [@emmykage](https://github.com/emmykage)
+- Twitter: [@emmykage](https://twitter.com/emmykage)
+- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
 
 ## 🤝 Contributing
 
