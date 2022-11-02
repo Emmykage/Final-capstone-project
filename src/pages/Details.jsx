@@ -8,8 +8,9 @@ import { CgChevronRightO } from 'react-icons/cg';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Form from '../components/Reservations/Form';
-import {  fetchedMotocycles, getmotocycle } from '../redux/motocycles/motocycles';
+import {  fetchedMotocycles } from '../redux/motocycles/motocycles';
 import { useParams } from 'react-router-dom';
+import { postReservation } from '../redux/reservations/reservations';
 const Details = ( ) => {
   const { id } = useParams()
   const user = localStorage.getItem('user')
@@ -19,7 +20,7 @@ const Details = ( ) => {
   console.log(id)
   const dispatch = useDispatch()
   useEffect(()=>{
-  // dispatch(getmotocycle(id));
+
   dispatch(fetchedMotocycles())
 }, []);
 
@@ -85,6 +86,7 @@ return (
         <span onClick={toggleForm}  className='close-btn' ><GrClose/></span>
         <Form 
         model={motocycle.model} 
+        motorcycle_id={id}
         user={user} 
         handleSubmit={handleSubmit}
         />

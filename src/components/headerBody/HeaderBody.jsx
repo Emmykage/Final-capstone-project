@@ -32,7 +32,7 @@ export const HeaderBody = () => {
         </div>
         {motocycles.length < 1 ? 
                     <div> There are no motocycles to select</div> 
-                : <div> please select </div>}
+                : <h3>Rent a Motocycle now!!! </h3>}
         <div className='header-body'>
             <div className='items'>
                 <div className='limit'>

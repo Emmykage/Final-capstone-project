@@ -37,25 +37,6 @@ export const fetchReservation = () => async (dispatch) => {
   });
 };
 
-// export const fetchedMotocycles = () => async (dispatch) => {
-//   const token = localStorage.getItem('token');
-//   const response = await fetch(`${BASE_URL}motorcycles`, {
-//     method: 'GET',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       Authorization: token,
-//     },
-
-//   });
-//   const motorcycles = await response.json();
-
-//   dispatch({
-//     type: FETCHED_MOTOCYCLES,
-//     payload: motorcycles,
-
-//   });
-// };
-
 export const postReservation = (data) => async () => {
   const token = localStorage.getItem('token');
   const response = await fetch(`${BASE_URL}reservations`, {

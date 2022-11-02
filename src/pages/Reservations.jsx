@@ -17,25 +17,16 @@ const Reservations = () => {
       <h2> My reservations </h2>
 
       <div className='res-contain'>
-        <table>
-      <thead>
-        <tr><th>Bike model</th>
-        <th>date</th>
-        <th>city</th></tr>
-      </thead>
-        
-      <tbody>
-
         {reservations.map((data, index) =>(
           <Reservation 
-          // model={data.motorcycle.model} 
+          model={data.motorcycle.model} 
+          avatar={data.motorcycle.avatar}
           city={data.city}
            date={data.date} 
            id={data.id} 
            key={index}/>
         ))}
-       </tbody>
-       </table>
+      
     </div>
 
 </div>
