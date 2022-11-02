@@ -8,15 +8,7 @@ const Form = (props) => {
     const [date, setDate ] = useState('')
     const [city, setCity] = useState('')
 console.log(model)
-    // const handleSubmit = (e) =>{
-    //     e.preventDefault();
-
-    //     showForm()
-    //     const data = {model, date, city}
-    //     dispatch(postReservation(data))
-     
-        
-    //   }
+  
   return (
   
         <form onSubmit={(e) => handleSubmit(e, {motorcycle_id, date, city })}>

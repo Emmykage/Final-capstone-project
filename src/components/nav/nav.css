@@ -35,8 +35,10 @@ nav:hover::after {
   padding: 0;
 }
 
-.nav-links h3 {
-  padding-left: 8px;
+.nav-links h2 {
+  padding-left: 4px;
+  text-align: left;
+  color: orangered;
 }
 
 .nav-links li {

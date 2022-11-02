@@ -35,11 +35,10 @@ const Navaigation = () => {
         </div>
 
         <ul className="nav-links">
-          <h3>
+          <h2>
             {' '}
-            Hello
-            {user}
-          </h3>
+            Hello {user}
+          </h2>
 
           <li>
             <NavLink

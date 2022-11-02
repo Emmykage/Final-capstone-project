@@ -5,31 +5,6 @@ import { useSelector, shallowEqual, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchedMotocycles } from '../redux/motocycles/motocycles'
 
-const bikes = [{
-  id: 1,
-  model: 'Hyundai',
-  color: 'black',
-  photo: 'photo',
-  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
-
-},
-{
-  id: 2,
-  model: 'Hyundai',
-  color: 'black',
-  photo: 'photo',
-  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
-
-
-},{
-  id: 3,
-  model: 'Hyundai',
-  color: 'black',
-  photo: 'photo',
-  description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi at impedit expedita, sed architecto eveniet recusandae maxime amet cum! Cupiditate!'
-
-}]
-
 const Motocycles = () => {
   const motocycles = useSelector((state) => state.motocycles, shallowEqual)
   const dispatch = useDispatch()
@@ -38,7 +13,7 @@ const Motocycles = () => {
     dispatch(fetchedMotocycles());
   }, []);
 
-  return (
+  return motocycles.length > 0 ? (
     <div className='sub-container'>
         <h2>Motocycles</h2>
       <div className='moto-contain'> 
@@ -50,6 +25,14 @@ const Motocycles = () => {
         )}
       </ul>
     </div>
+    </div>
+  ) : (
+    <div className='res-condition'>
+       <h2> Motocycles </h2>
+       <h3> Add Motocycle </h3>
+      <div className='center-t'>
+        <button className='reserve-btn' onClick={()=> navigate('/new')}>Make reservation</button>
+      </div>
     </div>
   )
 }

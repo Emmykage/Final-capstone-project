@@ -18,6 +18,7 @@ useEffect(()=>{
 const [city, setCity] = useState('')
 const [date, setDate] = useState('')
 const [model, setModel] = useState('')
+const [msg, setMsg] = useState({color: '', report: ''})
 
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -25,10 +26,22 @@ const [model, setModel] = useState('')
     const motorcycle_id = model
 
     const data = { motorcycle_id, date, city}
+   
+    if(city && date && model){
     dispatch(postReservation(data))
+    setCity('')
+    setDate('')
+    setModel('')
+    setMsg({
+      color: 'green',
+      report: 'Successfully made a reservation' })
 
-    // console.log(data)
-    // navigate( '/reservations')
+    }else{
+      setMsg({
+        color: 'error',
+        report: '* please fill all blanks correctly'
+      })
+    }
   }
   return (
 
@@ -46,7 +59,7 @@ const [model, setModel] = useState('')
           <option>SELECT MOTOCYCLE </option>
           {motocycles.map(motocycle =>(
             <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
-            // <option> bike two</option>
+            
           ))}
         
         </select>
@@ -74,6 +87,7 @@ const [model, setModel] = useState('')
         <input type='text' value={user.name}/>
          </div> */}
          <input type='submit' value='make reservation' />
+         <span className={msg.color}>{msg.report}</span>
     </form> 
     </div>
    

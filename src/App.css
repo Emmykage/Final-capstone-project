@@ -18,6 +18,7 @@ h2 {
 
 a {
   text-decoration: none;
+  color: rgb(91, 90, 90);
 }
 
 a:active {
@@ -76,6 +77,11 @@ form > div {
   width: 100%;
 }
 
+.center-t {
+  text-align: center;
+  margin-top: 20px;
+}
+
 form input,
 form select {
   width: 100%;
@@ -120,6 +126,16 @@ form select {
   border-radius: 10px;
 }
 
+.reserve-btn {
+  background-color: #c58fee;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 5px 8px;
+  font-size: 19px;
+  color: white;
+  border: none;
+}
+
 .card button {
   background-color: #c58fee;
   border: none;
@@ -137,6 +153,10 @@ form select {
   text-align: center;
   display: flex;
   justify-content: space-around;
+}
+
+.res-condition h3 {
+  background-color: rgba(253, 102, 33, 0.8);
 }
 
 .card-img img {
@@ -192,8 +212,10 @@ form select {
   border: 1px solid black;
   text-decoration: none;
   list-style: none;
+}
 
-  /* background-color: chocolate; */
+.bike-list a:hover {
+  box-shadow: 0 0 7px 0 grey;
 }
 
 .moto-contain ul li > div {
@@ -360,6 +382,10 @@ button:hover {
 
 .error {
   color: orangered;
+}
+
+.green {
+  color: green;
 }
 
 /* =========================splash screen ======================== */

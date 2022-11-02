@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import Reservation from '../components/Reservations/Reservation'
 import { fetchReservation, getReservation } from '../redux/reservations/reservations'
 
 const Reservations = () => {
   const  reservations = useSelector((state) => state.reservations)
+  const navigate = useNavigate()
   console.log(reservations)
   const dispatch = useDispatch();
   useEffect(()=>{
@@ -31,7 +33,13 @@ const Reservations = () => {
 
 </div>
   ): (
-    <div> <h3> You are yet to make a reservation </h3></div>
+    <div className='res-condition'>
+       <h2> My reservations </h2>
+       <h3> You are yet to make a reservation </h3>
+      <div className='center-t'>
+        <button className='reserve-btn' onClick={()=> navigate('/reserve_form')}>Make reservation</button>
+      </div>
+    </div>
   )}
 
 

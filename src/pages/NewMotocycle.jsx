@@ -10,7 +10,7 @@ const NewMotocycle = () => {
   const [duration, setDuration ] = useState('');
   const [price, setPrice ] = useState('');
   const [avatar, setAvatar] = useState('')
-  const [msg, setMsg] = useState('')
+  const [msg, setMsg] = useState({color: '', report: ''})
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -22,8 +22,13 @@ const NewMotocycle = () => {
     setDuration('')
     setPrice('')
     setAvatar('')
+    
+    setMsg({color: 'green',
+    report: 'Motocycle has been added successfully'})
     }else{
-      setMsg('* please fill all blanks correctly')
+      
+      setMsg({color: 'error',
+      report: '* please fill all blanks correctly'})
     }
   }
   return (
@@ -81,10 +86,7 @@ const NewMotocycle = () => {
         </div>
         <input type='submit' value='make reservation' />
     
-        {/* {setTimeout(() =>{
-          <span>{msg} </span>
-        }, '3000')} */}
-        <span className='error'>{msg}</span>
+           <span className={msg.color}>{msg.report}</span>
     
    </form> 
    </div>
