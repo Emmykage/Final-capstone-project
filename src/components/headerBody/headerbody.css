@@ -14,10 +14,12 @@
   margin-top: 25px;
   width: 100%;
 }
-.head-content h3{
+
+.head-content h3 {
   margin-left: 12px;
   background-color: rgba(253, 102, 33, 0.8);
 }
+
 .head-content .header-body .items {
   margin: 0;
   width: 100%;
