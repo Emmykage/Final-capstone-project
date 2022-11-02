@@ -1,6 +1,6 @@
 // import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 // import { createSlice } from '@reduxjs/toolkit';
-const BASE_URL = 'http://127.0.0.1:3000/api/v1/';
+const BASE_URL = 'https://motocycle-booking.herokuapp.com/api/v1/';
 const GET_RESERVATIONS = 'reservations/reservation/GET_RESERVATIONS';
 const DELETE_RESERVATION = 'reservations/reservation/DELETE_RESERVATION';
 
