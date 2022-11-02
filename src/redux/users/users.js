@@ -30,14 +30,10 @@ export const loginUser = (userInfo, navigate) => async (dispatch) => {
     body: JSON.stringify(userInfo),
   }).then((res) => res.json())
     .then((data) => {
-      if (data.error) {
-        alert(data.error);
-      } else {
-        localStorage.setItem('user', data.username);
-        localStorage.setItem('token', data.token);
-        if (data.username) {
-          navigate('/');
-        }
+      localStorage.setItem('user', data.username);
+      localStorage.setItem('token', data.token);
+      if (data.username) {
+        navigate('/');
       }
 
       dispatch({

@@ -15,7 +15,6 @@ import ForgotPassword from './pages/auth/forgot-password';
 import ResetPassword from './pages/auth/reset-password';
 import Splashscreen from './pages/splashscreen';
 
-
 function App() {
   return (
 
