@@ -7,7 +7,7 @@
 
 body {
   font-size: 18px;
-  color: #000;
+  color: rgb(52, 52, 52);
   margin: 0;
   padding: 0;
 }
@@ -18,6 +18,11 @@ h2 {
 
 a {
   text-decoration: none;
+  color: rgb(91, 90, 90);
+}
+
+a:active {
+  color: var(--color-primary-var);
 }
 
 ul {
@@ -33,7 +38,8 @@ ul {
 }
 
 .container .content {
-  margin: 36px 36px 18px 268px;
+  margin: 15px 0 1px 250px;
+  padding: 0;
   width: 100%;
 }
 
@@ -71,33 +77,106 @@ form > div {
   width: 100%;
 }
 
+.center-t {
+  text-align: center;
+  margin-top: 20px;
+}
+
 form input,
 form select {
   width: 100%;
   padding: 8px 4px;
 }
 
-.res-contain,
+/* .res-contain, */
 .moto-contain {
   width: 100%;
   max-width: 900px;
-  margin: 280px auto;
+  margin: 0 auto;
   justify-content: space-between;
 }
 
-.res-contain table,
+.res-contain {
+  width: 80%;
+  margin: auto;
+
+  /* display: grid; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.res-contain .card {
+  width: 250px;
+  box-shadow: 0 0 3px 0  var(--color-primary);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  padding-bottom: 7px;
+}
+
+.res-contain .card:hover {
+  box-shadow: 0 0 9px 0  var(--color-primary);
+}
+
+.card .card-img {
+  width: 100%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.reserve-btn {
+  background-color: #c58fee;
+  border-radius: 8px;
+  width: fit-content;
+  padding: 5px 8px;
+  font-size: 19px;
+  color: white;
+  border: none;
+}
+
+.card button {
+  background-color: #c58fee;
+  border: none;
+  border-radius: 5px;
+}
+
+.card h3,
+.card h4,
+.card h5 {
+  margin: 0;
+  text-align: center;
+}
+
+.action-btns {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.res-condition h3 {
+  background-color: rgba(253, 102, 33, 0.8);
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* .res-contain table,
 .moto-contain table {
   width: 100%;
   text-align: left;
-}
+} */
 
-.res-contain table,
+/* .res-contain table,
 .res-contain table td,
 .res-contain th {
   border: 1px solid black;
   padding: 18px;
   border-collapse: collapse;
-}
+} */
 
 .moto-contain table,
 .moto-contain table td,
@@ -133,8 +212,10 @@ form select {
   border: 1px solid black;
   text-decoration: none;
   list-style: none;
+}
 
-  /* background-color: chocolate; */
+.bike-list a:hover {
+  box-shadow: 0 0 7px 0 grey;
 }
 
 .moto-contain ul li > div {
@@ -145,6 +226,7 @@ form select {
 .bike-list .image {
   width: 90px;
   flex-basis: 30%;
+  height: 100%;
 }
 
 .moto-contain ul li .image {
@@ -155,11 +237,12 @@ form select {
 .details-wrapper .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .moto-contain ul li .image img {
   width: 100%;
+  height: 100%;
 }
 
 .res-contain tr:hover {
@@ -225,6 +308,7 @@ form select {
   position: absolute;
   right: 0;
   width: 500px;
+  max-width: 100%;
   top: 0;
   background-color: var(--color-bg-trans);
   height: 100vh;
@@ -239,6 +323,7 @@ form select {
   font-size: 28px;
   color: #fff;
   font-weight: 500;
+  z-index: 999;
 }
 
 .price-list li {
@@ -295,6 +380,14 @@ button:hover {
   opacity: 0.7;
 }
 
+.error {
+  color: orangered;
+}
+
+.green {
+  color: green;
+}
+
 /* =========================splash screen ======================== */
 
 .screen-cont {
@@ -312,12 +405,6 @@ button:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  /* display: block; */
-
-  /* width: 500px; */
-
-  /* background-color: green; */
 }
 
 .screen-cont .btn-div .splash {
@@ -392,11 +479,14 @@ button:hover {
 .del-contain ul li .image {
   width: 100px;
   height: 100px;
-  background-color: #d6eeee;
+
+  /* background-color: #d6eeee; */
 }
 
 .del-contain ul li .image img {
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .del-contain ul li .details {
@@ -467,6 +557,26 @@ button:hover {
 
   .del-contain ul li .details button {
     font-size: 15px;
+  }
+
+  .sideForm {
+    width: 100%;
+    max-width: 600px;
+    right: calc(-100% - 250px);
+  }
+
+  .showForm {
+    position: absolute;
+    right: 0;
+    width: 500px;
+    max-width: 100%;
+    top: 0;
+    background-color: var(--color-bg-trans);
+    height: 100vh;
+    transition: var(--transition);
+
+    /* text-align: right; */
+    z-index: 9999999;
   }
 }
 

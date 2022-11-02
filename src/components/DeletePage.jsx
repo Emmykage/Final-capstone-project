@@ -1,8 +1,14 @@
 import React from 'react'
 import {AiFillDelete} from 'react-icons/ai'
+import { useDispatch } from 'react-redux'
+import { deleteMotocycle } from '../redux/motocycles/motocycles'
 
 const Motocycles = (props) => {
-  const {model, avatar, handleDelete, id} = props
+  const dispatch = useDispatch()
+  const {model, avatar, id} = props
+  const handleDelete = () =>{
+    dispatch(deleteMotocycle(id))
+  }
     return (
     <li>
               <div className='image'>
@@ -10,7 +16,7 @@ const Motocycles = (props) => {
               </div>
               <div className='details'>
                 <h3>{model}</h3>
-                <button onClick={handleDelete(id)}><AiFillDelete/></button>
+                <button onClick={handleDelete}><AiFillDelete/></button>
               </div>
            
           </li>

@@ -1,29 +1,22 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux';
+// import { useSelector } from 'react-redux';
 
 const Form = (props) => {
-    const {name} = props
-    const user = useSelector((state) => state.user)
+  const user = localStorage.getItem('user')
+    const {model, motorcycle_id, handleSubmit} = props
+    // const user = useSelector((state) => state.user)
     const [date, setDate ] = useState('')
     const [city, setCity] = useState('')
-
-    const handleSubmit = (e) =>{
-        e.preventDefault();
-
-        showForm()
-        const data = {name, date, city}
-        dispatch(postReservation(data))
-     
-        
-      }
+console.log(model)
+  
   return (
-    <form>
-        <form onSubmit={handleSubmit}>
+  
+        <form onSubmit={(e) => handleSubmit(e, {motorcycle_id, date, city })}>
       <div>
      
         <label>Select Motocycle</label>
        
-         <input type='text' value={name} readOnly/>
+         <input type='text' value={model} readOnly/>
         </div>
         <div>
      
@@ -40,14 +33,14 @@ const Form = (props) => {
       
      </div>
 
-        {/* <div>
+        <div>
           
          <label>User name</label>
-        <input type='text' value={user.name}/>
-         </div> */}
+        <input type='text' value={user}/>
+         </div>
          <input type='submit' value='make reservation' />
     </form> 
-    </form>
+  
   )
 }
 

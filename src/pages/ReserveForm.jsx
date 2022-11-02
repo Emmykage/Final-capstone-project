@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchedMotocycles } from '../redux/motocycles/motocycles'
-// import { Form } from 'react-router-dom'
+import { postReservation } from '../redux/reservations/reservations'
 
 
 const ReserveForm = () => {
@@ -14,26 +14,40 @@ useEffect(()=>{
   dispatch(fetchedMotocycles());
 }, []);
 //  const user = useSelector((state) => state.user)
- const navigate = useNavigate();
+//  const navigate = useNavigate();
 const [city, setCity] = useState('')
 const [date, setDate] = useState('')
 const [model, setModel] = useState('')
+const [msg, setMsg] = useState({color: '', report: ''})
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    const user_id = user.id
-    const motorcycle_id = model.id
+    // const user_id = user.id
+    const motorcycle_id = model
 
-    const data = {user_id, motorcycle_id, date, city}
-    dispatch(postReservation())
-    // await sendReservation
-    console.log(data)
-    navigate( '/reservations')
+    const data = { motorcycle_id, date, city}
+   
+    if(city && date && model){
+    dispatch(postReservation(data))
+    setCity('')
+    setDate('')
+    setModel('')
+    setMsg({
+      color: 'green',
+      report: 'Successfully made a reservation' })
+
+    }else{
+      setMsg({
+        color: 'error',
+        report: '* please fill all blanks correctly'
+      })
+    }
   }
   return (
 
     
     <div className='sub-container'>
+      <h2> Make Reservation</h2>
      <form onSubmit={handleSubmit}>
       <div>
      
@@ -45,7 +59,7 @@ const [model, setModel] = useState('')
           <option>SELECT MOTOCYCLE </option>
           {motocycles.map(motocycle =>(
             <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
-            // <option> bike two</option>
+            
           ))}
         
         </select>
@@ -73,6 +87,7 @@ const [model, setModel] = useState('')
         <input type='text' value={user.name}/>
          </div> */}
          <input type='submit' value='make reservation' />
+         <span className={msg.color}>{msg.report}</span>
     </form> 
     </div>
    

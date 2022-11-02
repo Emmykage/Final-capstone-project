@@ -17,7 +17,7 @@ const RegisterScreen = () => {
     
     e.preventDefault();
     setError(null);
-    dispatch(registerUser({name, password}))
+    dispatch(registerUser({user: {name, password}}))
     navigate('/auth/login')
   };
   return (
@@ -46,15 +46,7 @@ const RegisterScreen = () => {
             />
           </div>
 
-          <div className="form-group ">
-            <label>Email address</label>
-            <input
-              type="email"
-              className="form-control "
-              placeholder="Enter email"
-            />
-          </div>
-          <div className="form-group">
+            <div className="form-group">
             <label>Password</label>
             <input
               type="password"

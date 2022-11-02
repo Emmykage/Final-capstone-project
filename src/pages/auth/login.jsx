@@ -17,7 +17,7 @@ const LoginScreen = () => {
   const handleSubmit = async (e) => {
  
     e.preventDefault();
-    dispatch(loginUser({name, password}, navigate))
+    dispatch(loginUser({user: {name, password}}, navigate))
     // navigate('/')
     // const response = await  ApiClient.loginUser({name, password});
   

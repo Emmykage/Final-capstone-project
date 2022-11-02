@@ -7,16 +7,29 @@ const NewMotocycle = () => {
   const dispatch = useDispatch()
   const [model , setModel] = useState('');
   const [description , setDescription] = useState('');
-  const [image, setImage ] = useState('');
   const [duration, setDuration ] = useState('');
   const [price, setPrice ] = useState('');
   const [avatar, setAvatar] = useState('')
+  const [msg, setMsg] = useState({color: '', report: ''})
 
   const handleSubmit = (e)=>{
     e.preventDefault();
     const data = {model, duration,avatar, description, price}
+    if(model && description && duration && price && avatar){
     dispatch(addMotorcycle(data))
+    setModel('')
+    setDescription('')
+    setDuration('')
+    setPrice('')
+    setAvatar('')
     
+    setMsg({color: 'green',
+    report: 'Motocycle has been added successfully'})
+    }else{
+      
+      setMsg({color: 'error',
+      report: '* please fill all blanks correctly'})
+    }
   }
   return (
     <div className='sub-container'>
@@ -37,7 +50,7 @@ const NewMotocycle = () => {
        </div>
        <div>
     
-       <label>MOtocycle duration</label>
+       <label>Motocycle duration (months)</label>
        <input type='text'
       value={duration}
       onChange={(e)=> setDuration(e.target.value)}
@@ -55,7 +68,7 @@ const NewMotocycle = () => {
        </div>
        <div>
     
-       <label>Motocycle price</label>
+       <label>Motocycle price: $</label>
        <input type='number'
       value={price}
       onChange={(e)=> setPrice(e.target.value)}
@@ -67,11 +80,14 @@ const NewMotocycle = () => {
        <label>avatar</label>
        <input 
        type='url' 
-       value={image}
+       value={avatar}
        onChange={(e)=> setAvatar(e.target.value)}
        />
         </div>
         <input type='submit' value='make reservation' />
+    
+           <span className={msg.color}>{msg.report}</span>
+    
    </form> 
    </div>
    </div>

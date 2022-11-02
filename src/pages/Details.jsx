@@ -1,56 +1,53 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import './details.module.css';
 import { BsChevronRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr'
 import { BiCog } from 'react-icons/bi';
 import { CgChevronRightO } from 'react-icons/cg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Form from '../components/Reservations/Form';
+import {  fetchedMotocycles } from '../redux/motocycles/motocycles';
+import { useParams } from 'react-router-dom';
+import { postReservation } from '../redux/reservations/reservations';
+const Details = ( ) => {
+  const { id } = useParams()
+  const user = localStorage.getItem('user')
+  const motocycles = useSelector((state) => state.motocycles)
+  const motocycle = motocycles.filter((moto) => moto.id == id )
+  console.log(motocycle.id)
+  console.log(id)
+  const dispatch = useDispatch()
+  useEffect(()=>{
 
-const Details = ( motocycle ) => {
-  // const motocycle_id = motocycle.id
-
-  const moto = useSelector((state) => state.motocycles.find((motocycle)=> motocycle.id === motocycle_id))
-  const user = useSelector((state) => state.user)
-  // const navigate = useNavigate();
- const [city, setCity] = useState('')
- const [date, setDate] = useState('')
-//  const [model, setModel] = useState('')
- 
-
+  dispatch(fetchedMotocycles())
+}, []);
 
 const [reserveSide, setReserveSide] = useState(false)
-const showForm = ()=>{
+const toggleForm = ()=>{
   setReserveSide(!reserveSide)
 }
-const handleSubmit = (e) =>{
+const handleSubmit = (e, formValues) =>{
   e.preventDefault();
-  // const user_id = user.id
-  // const motorcycle_id = model.id
-  showForm()
-  const data = {name, date, city}
-  dispatch(postReservation())
-  // await sendReservation
-  // console.log(data)
-  // navigate( '/reservations')
-  showForm()
+  dispatch(postReservation(formValues))
+  toggleForm()
 }
 
 return (
-    <div className='details-wrapper'>
-      <div className='img-container'>
-        <img src={motocycle.image} alt={motocycle.name} />
+    <>
+      {motocycle.map((motocycle) => (
+       <div className='details-wrapper'><div className='img-container'>
+        <img src={motocycle.avatar} alt={motocycle.model} />
       </div>
       <div className='description'>
-        <h2>{motocycle.name}</h2>
+        <h2>{motocycle.model}</h2>
         <p>- £350 upon every vespa purchase.</p>
 
         <ul className='price-list'>
           <li>
             <h6>Finance Fee</h6>
-            <p>£{motocycle.financeFee}</p>
+            <p>£{motocycle.price}</p>
           </li>
 
           <li>
@@ -60,7 +57,7 @@ return (
 
           <li>
             <h6>total Amount Payable</h6>
-            <p>£{motocycle.payable}</p>
+            <p>£{motocycle.price}</p>
           </li>
         
           <li>
@@ -80,17 +77,25 @@ return (
           </svg>
         </div>
 
-        <button className='btn reserveBtn' onClick={showForm}><BiCog/> Reserve <CgChevronRightO/></button>
+        <button className='btn reserveBtn' onClick={toggleForm}><BiCog/> Reserve <CgChevronRightO/></button>
       </div>
 
 
 
       <div className={reserveSide ? 'sideform showForm' : 'sideForm'}>
-        <span onClick={showForm}  className='close-btn' ><GrClose/></span>
-        <Form model={moto.model}/>
+        <span onClick={toggleForm}  className='close-btn' ><GrClose/></span>
+        <Form 
+        model={motocycle.model} 
+        motorcycle_id={id}
+        user={user} 
+        handleSubmit={handleSubmit}
+        />
      
       </div>
-    </div>
+      </div>
+      ))}
+      
+    </>
 )
 }
 
