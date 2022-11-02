@@ -7,13 +7,9 @@ const DELETE_RESERVATION = 'reservations/reservation/DELETE_RESERVATION';
 export default function reserveReducer(state = [], action) {
   switch (action.type) {
     case GET_RESERVATIONS:
-      return [
-        ...action.payload,
-      ];
+      return [...action.payload];
     case DELETE_RESERVATION:
-      return [
-        ...state.filter((reservation) => reservation.id !== action.id),
-      ];
+      return [...state.filter((reservation) => reservation.id !== action.id)];
     default:
       return state;
   }
@@ -26,9 +22,7 @@ export const fetchReservation = () => async (dispatch) => {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
-
     },
-
   }).then((res) => res.json());
 
   dispatch({

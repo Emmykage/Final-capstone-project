@@ -1,40 +1,50 @@
-
-import React from 'react'
-import Bikes from '../components/motocycles/motocycles'
-import { useSelector, shallowEqual, useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { fetchedMotocycles } from '../redux/motocycles/motocycles'
+import React, { useEffect } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Bikes from '../components/motocycles/motocycles';
+import { fetchedMotocycles } from '../redux/motocycles/motocycles';
 
 const Motocycles = () => {
-  const motocycles = useSelector((state) => state.motocycles, shallowEqual)
-  const dispatch = useDispatch()
+  const motocycles = useSelector((state) => state.motocycles, shallowEqual);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(fetchedMotocycles());
   }, []);
 
   return motocycles.length > 0 ? (
-    <div className='sub-container'>
-        <h2>Motocycles</h2>
-      <div className='moto-contain'> 
-     
-      <ul>
-        {motocycles.map((data) =>(
-          <Bikes key={data.id} photo={data.avatar} model={data.model} description={data.description} id={data.id}/>
-        )
-        )}
-      </ul>
-    </div>
-    </div>
-  ) : (
-    <div className='res-condition'>
-       <h2> Motocycles </h2>
-       <h3> Add Motocycle </h3>
-      <div className='center-t'>
-        <button className='reserve-btn' onClick={()=> navigate('/new')}>Make reservation</button>
+    <div className="sub-container">
+      <h2>Motocycles</h2>
+      <div className="moto-contain">
+        <ul>
+          {motocycles.map((data) => (
+            <Bikes
+              key={data.id}
+              photo={data.avatar}
+              model={data.model}
+              description={data.description}
+              id={data.id}
+            />
+          ))}
+        </ul>
       </div>
     </div>
-  )
-}
+  ) : (
+    <div className="res-condition">
+      <h2> Motocycles </h2>
+      <h3> Add Motocycle </h3>
+      <div className="center-t">
+        <button
+          className="reserve-btn"
+          onClick={() => navigate('/new')}
+          type="button"
+        >
+          Add Motocycle
+        </button>
+      </div>
+    </div>
+  );
+};
 
-export default Motocycles
+export default Motocycles;

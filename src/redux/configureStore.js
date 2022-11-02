@@ -12,6 +12,9 @@ const rootReducer = combineReducers({
   reservations: reserveReducer,
 });
 
-const store = configureStore({ reducer: rootReducer }, applyMiddleware(thunk, logger));
+const store = configureStore(
+  { reducer: rootReducer },
+  applyMiddleware(thunk, logger),
+);
 
 export default store;

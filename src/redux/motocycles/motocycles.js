@@ -8,9 +8,7 @@ export default function reducer(state = [], action) {
     case FETCHED_MOTOCYCLES:
       return [...action.payload];
     case DELETE_MOTOCYCLE:
-      return [
-        ...state.filter((motocycle) => motocycle.id !== action.id),
-      ];
+      return [...state.filter((motocycle) => motocycle.id !== action.id)];
     case FETCH_MOTOCYCLE:
       return action.payload;
     default:
@@ -25,7 +23,6 @@ export const getmotocycle = (id) => async (dispatch) => {
       'Content-Type': 'application/json',
       Authorization: token,
     },
-
   }).then((res) => res.text());
 
   dispatch({
@@ -41,7 +38,6 @@ export const deleteMotocycle = (id) => async (dispatch) => {
       'Content-Type': 'application/json',
       Authorization: token,
     },
-
   });
   dispatch({
     type: DELETE_MOTOCYCLE,
@@ -69,12 +65,10 @@ export const fetchedMotocycles = () => async (dispatch) => {
       'Content-Type': 'application/json',
       Authorization: token,
     },
-
   });
   const motorcycles = await response.json();
   dispatch({
     type: FETCHED_MOTOCYCLES,
     payload: motorcycles,
-
   });
 };

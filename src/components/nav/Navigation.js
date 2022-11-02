@@ -17,7 +17,6 @@ const Navaigation = () => {
 
   const showMenu = () => setSidebar(!sidebar);
   return (
-
     <div className="nav-bar">
       <div className="icon-div">
         <GiHamburgerMenu className="icon" onClick={showMenu} />
@@ -30,15 +29,12 @@ const Navaigation = () => {
         <div className="logo">
           <NavLink to="/">
             <img src={logo} alt="logo" />
-
           </NavLink>
         </div>
 
         <ul className="nav-links">
           <h2>
-            {' '}
             Hello
-            {' '}
             {user}
           </h2>
 
@@ -102,11 +98,16 @@ const Navaigation = () => {
         </ul>
 
         <div className="social-icons">
-          <span><FaFacebookF /></span>
-          <span><FaTwitter /></span>
-          <span><FaLinkedinIn /></span>
+          <span>
+            <FaFacebookF />
+          </span>
+          <span>
+            <FaTwitter />
+          </span>
+          <span>
+            <FaLinkedinIn />
+          </span>
         </div>
-
       </nav>
     </div>
   );
