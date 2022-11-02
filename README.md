@@ -98,23 +98,7 @@ npm test
 
 ## Authors
 
-👤 Menanya Morris
-
-- GitHub: [@emmykage](https://github.com/emmykage)
-- Twitter: [@emmykage](https://twitter.com/emmykage)
-- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
-
-
-
-👤 **Addisu Haile**
-
-- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
-- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
-- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
-
-
-
-👤 Menanya Morris
+## 👤 Menanya Morris
 
 - GitHub: [@emmykage](https://github.com/emmykage)
 - Twitter: [@emmykage](https://twitter.com/emmykage)
@@ -126,6 +110,15 @@ npm test
 - GitHub: [@isaacpitwa](https://github.com/isaacpitwa)
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
+
+
+
+👤 **Addisu Haile**
+
+- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
+- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
+- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
+
 
 
 ## 🤝 Contributing
