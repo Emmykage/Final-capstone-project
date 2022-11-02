@@ -7,6 +7,7 @@ import { GiCheckedShield } from 'react-icons/gi'
 const Footer = () => {
   return (
     <div className='footer'>
+      <hr/>
        <div className='footer-row'>
         <div className='foot-col'>
             <span><FaMotorcycle className='icon'/><h4> Modern fleet</h4></span>

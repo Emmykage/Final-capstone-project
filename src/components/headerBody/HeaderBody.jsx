@@ -31,7 +31,7 @@ export const HeaderBody = () => {
             <p>You need a ride across town? </p>
         </div>
         {motocycles.length < 1 ? 
-                    <div> There are no motocycles to select</div> 
+                    <h3> There are no motocycles to select</h3> 
                 : <h3>Rent a Motocycle now!!! </h3>}
         <div className='header-body'>
             <div className='items'>
