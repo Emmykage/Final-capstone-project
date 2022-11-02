@@ -30,7 +30,7 @@ export const fetchReservation = () => async (dispatch) => {
     },
 
   }).then((res) => res.json());
-  // console.log(reservations)
+
   dispatch({
     type: GET_RESERVATIONS,
     payload: reservations,
@@ -39,7 +39,7 @@ export const fetchReservation = () => async (dispatch) => {
 
 export const postReservation = (data) => async () => {
   const token = localStorage.getItem('token');
-  const response = await fetch(`${BASE_URL}reservations`, {
+  await fetch(`${BASE_URL}reservations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -47,7 +47,6 @@ export const postReservation = (data) => async () => {
     },
     body: JSON.stringify(data),
   });
-  console.log(response);
 };
 
 export const deleteReservation = (id) => async (dispatch) => {
