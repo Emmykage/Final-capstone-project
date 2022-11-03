@@ -18,7 +18,13 @@ You can see the backend for this project(https://github.com/Addisu87/capstone-ap
 
 ### Our Kanban board
 
-[Kanban](https://github.com/users/Emmykage/projects/4/views/1)
+<table>
+<tr>
+<td><img src="https://user-images.githubusercontent.com/97867917/196933816-5bfdc567-d190-4720-b8b4-19ba16ff3682.PNG" alt="Kanban board"></td>
+<td><img src="https://user-images.githubusercontent.com/97867917/196933816-5bfdc567-d190-4720-b8b4-19ba16ff3682.PNG" alt="kanban board 2"></td>
+
+</tr>
+</table>
 
 ## Built With
 
@@ -95,11 +101,11 @@ npm test
 
 ## Authors
 
-👤 **Addisu Haile**
+## 👤 Menanya Morris
 
-- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
-- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
-- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
+- GitHub: [@emmykage](https://github.com/emmykage)
+- Twitter: [@emmykage](https://twitter.com/emmykage)
+- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
 
 ## 👤 Isaac Pitwa
 
@@ -107,11 +113,15 @@ npm test
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
 
-## 👤 Menanya Morris
+👤 Addisu Haile
 
-- GitHub: [@emmykage](https://github.com/emmykage)
-- Twitter: [@emmykage](https://twitter.com/emmykage)
-- LinkedIn: [Menanya Morris](https://www.linkedin.com/in/morris-menanya-a51985104/)
+- GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
+- Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
+- LinkedIn: [addisu-tedla](https://img.shields.io/badge/-addisu_tedla-white?logo=LinkedIn&logoColor=1DA1F2&style=plastic)
+
+
+
+
 
 ## 🤝 Contributing
 
