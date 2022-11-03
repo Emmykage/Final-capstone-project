@@ -18,7 +18,7 @@ You can see the backend for this project(https://github.com/Addisu87/capstone-ap
 
 ### Our Kanban board
 
-https://github.com/users/Emmykage/projects/4/views/1
+[Kanban](https://github.com/users/Emmykage/projects/4/views/1)
 
 ## Built With
 
@@ -32,12 +32,12 @@ https://github.com/users/Emmykage/projects/4/views/1
 
 <table>
 <tr>
-<td><img src="https://drive.google.com/file/d/1VG6TAhtZZazD_EuepOZK-3lK_6BjFv-a/view?usp=share_link" alt="splash page"></td>
-<td><img src="https://drive.google.com/file/d/1lOkCsZ15QLokuEqCJrON0Mr3jJQpay_Y/view?usp=share_link" alt="home page"></td>
-<td><img src="https://drive.google.com/file/d/19z0JUanZi3d1W8y9x-BIeZ8-_CFNC4J0/view?usp=share_link" alt="details page"></td>
+<td><img src="src/assets/img/power_spokes_splash_screen.PNG" alt="splash page"></td>
+<td><img src="src/assets/img/power_spokes_home_screen.PNG" alt="home page"></td>
+<td><img src="src/assets/img/power_spokes_details.PNG" alt="details page"></td>
 </tr>
 </table>
-<div align="center"><img src="src/img/all-versions-picture.png" alt="all pages"></div>
+
 
 ## Getting Started
 
