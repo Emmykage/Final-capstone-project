@@ -21,7 +21,7 @@ const Reservation = (props) => {
           { model }
           {' '}
         </h4>
-        {/* <h4> { city } </h4> */}
+
         <h5>
           {' '}
           { date }

@@ -7,8 +7,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-// import "./styles.css";
-
 // import required modules
 import { Pagination, Navigation } from 'swiper';
 import { Link } from 'react-router-dom';
@@ -69,7 +67,7 @@ export const HeaderBody = () => {
           {/* =========================mobile view ======================== */}
           <div className="limit-mobile">
             <Swiper
-                    // slidesPerView={3}
+                  
               pagination={{
                 type: 'progressbar',
               }}
