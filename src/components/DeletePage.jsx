@@ -1,5 +1,6 @@
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteMotocycle } from '../redux/motocycles/motocycles';
 import PropTypes from 'prop-types';
@@ -17,7 +18,7 @@ const Motocycles = (props) => {
       </div>
       <div className="details">
         <h3>{model}</h3>
-        <button onClick={handleDelete}><AiFillDelete /></button>
+        <button type="button" onClick={handleDelete}><AiFillDelete /></button>
       </div>
 
     </li>
@@ -29,5 +30,5 @@ export default Motocycles;
 Motocycles.propTypes = {
   model: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };

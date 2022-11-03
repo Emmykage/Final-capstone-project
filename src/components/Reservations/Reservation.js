@@ -1,7 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteReservation } from '../../redux/reservations/reservations';
 import PropTypes from 'prop-types';
+import { deleteReservation } from '../../redux/reservations/reservations';
+
 const Reservation = (props) => {
   const dispatch = useDispatch();
   const {
@@ -13,7 +14,7 @@ const Reservation = (props) => {
   return (
     <div className="card">
       <div className="card-img">
-        <img src={avatar} />
+        <img src={avatar} alt="avatar" />
       </div>
       <div className="card-details">
         <h4>
@@ -28,21 +29,21 @@ const Reservation = (props) => {
         </h5>
         <div className="action-btns">
           <span>{city}</span>
-          <button onClick={handleDelete}> Delete </button>
+          <button type="button" onClick={handleDelete}> Delete </button>
         </div>
 
       </div>
     </div>
 
-
   );
 };
 
 export default Reservation;
+
 Reservation.propTypes = {
   model: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.number.isRequired,
 };

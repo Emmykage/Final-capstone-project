@@ -43,52 +43,65 @@ const NewMotocycle = () => {
         <form onSubmit={handleSubmit}>
           <div>
 
-            <label>Motocycle model</label>
-            <input
-              type="text"
-              value={model}
-              onChange={(e) => setModel(e.target.value)}
-            />
+            <label htmlFor="model">
+              Motocycle model
+              <input
+                id="model"
+                type="text"
+                value={model}
+                onChange={(e) => setModel(e.target.value)}
+              />
+            </label>
+          </div>
+          <div>
+
+            <label htmlFor="duration">
+              Motocycle duration (months)
+              <input
+                id="duration"
+                type="text"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+              />
+            </label>
 
           </div>
           <div>
 
-            <label>Motocycle duration (months)</label>
-            <input
-              type="text"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-            />
+            <label htmlFor="description">
+              Motocycle description
+              <input
+                id="description"
+                type="text"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </label>
+          </div>
+          <div>
+
+            <label htmlFor="price">
+              Motocycle price: $
+              <input
+                id="price"
+                type="number"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </label>
 
           </div>
           <div>
 
-            <label>Motocycle description</label>
-            <input
-              type="text"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-            />
-
-          </div>
-          <div>
-
-            <label>Motocycle price: $</label>
-            <input
-              type="number"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-            />
-
-          </div>
-          <div>
-
-            <label>avatar</label>
-            <input
-              type="url"
-              value={avatar}
-              onChange={(e) => setAvatar(e.target.value)}
-            />
+            <label htmlFor="avatar">
+              avatar
+              <input
+                id="avatar"
+                type="url"
+                value={avatar}
+                onChange={(e) => setAvatar(e.target.value)}
+              />
+            </label>
           </div>
           <input type="submit" value="make reservation" />
 

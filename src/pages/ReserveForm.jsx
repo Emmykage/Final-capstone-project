@@ -44,40 +44,44 @@ const ReserveForm = () => {
       <form onSubmit={handleSubmit}>
         <div>
 
-          <label>Select Motocycle</label>
-          <select
-            className="model-selector"
-            value={model}
-            onChange={(e) => { setModel(e.target.value); }}
-          >
-            <option>SELECT MOTOCYCLE </option>
-            {motocycles.map((motocycle) => (
-              <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
+          <label htmlFor="model">
+            Select Motocycle
+            <select
+              className="model-selector"
+              value={model}
+              onChange={(e) => { setModel(e.target.value); }}
+            >
+              <option>SELECT MOTOCYCLE </option>
+              {motocycles.map((motocycle) => (
+                <option key={motocycle.id} value={motocycle.id}>{motocycle.model}</option>
 
-            ))}
+              ))}
 
-          </select>
-
-        </div>
-        <div>
-
-          <label>City</label>
-          <input
-            type="text"
-            value={city}
-            onChange={(e) => { setCity(e.target.value); }}
-          />
+            </select>
+          </label>
 
         </div>
         <div>
 
-          <label>Date</label>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => { setDate(e.target.value); }}
-          />
+          <label htmlFor="city">
+            City
+            <input
+              type="text"
+              value={city}
+              onChange={(e) => { setCity(e.target.value); }}
+            />
+          </label>
+        </div>
+        <div>
 
+          <label htmlFor="date">
+            Date
+            <input
+              type="date"
+              value={date}
+              onChange={(e) => { setDate(e.target.value); }}
+            />
+          </label>
         </div>
 
         <input type="submit" value="make reservation" />
