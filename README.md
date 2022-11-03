@@ -32,9 +32,9 @@ https://github.com/users/Emmykage/projects/4/views/1
 
 <table>
 <tr>
-<td><img src="src/img/splash.png" alt="splash page"></td>
-<td><img src="src/img/signup.png" alt="signup page"></td>
-<td><img src="src/img/login.png" alt="login page"></td>
+<td><img src="https://drive.google.com/file/d/1VG6TAhtZZazD_EuepOZK-3lK_6BjFv-a/view?usp=share_link" alt="splash page"></td>
+<td><img src="https://drive.google.com/file/d/1lOkCsZ15QLokuEqCJrON0Mr3jJQpay_Y/view?usp=share_link" alt="home page"></td>
+<td><img src="https://drive.google.com/file/d/19z0JUanZi3d1W8y9x-BIeZ8-_CFNC4J0/view?usp=share_link" alt="details page"></td>
 </tr>
 </table>
 <div align="center"><img src="src/img/all-versions-picture.png" alt="all pages"></div>
