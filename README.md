@@ -10,7 +10,7 @@ You can see the backend for this project(https://github.com/Addisu87/capstone-ap
 
 [Kanban Board Link](https://user-images.githubusercontent.com/97867917/196933806-cabeff2f-a288-4d0b-8a52-9e8b883d741c.PNG)
 
-- We are four (3) in this team.
+- We are three (3) in this team.
 
   - @Emmykage
   - @Isaacpitwa
@@ -113,7 +113,7 @@ npm test
 - Twitter: [@isaacpitwa](https://twitter.com/isaacpitwa)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/isaac-pitwa)
 
-👤 Addisu Haile
+## 👤 Addisu Haile
 
 - GitHub: [@Addisu87](https://img.shields.io/badge/-Addisu87-white?logo=GitHub&logoColor=181717&style=plastic)
 - Twitter: [@AddisuTedla](https://img.shields.io/badge/-AddisuTedla-white?logo=Twitter&logoColor=1DA1F2&style=plastic)
