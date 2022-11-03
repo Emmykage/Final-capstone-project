@@ -28,7 +28,7 @@ https://github.com/users/Emmykage/projects/4/views/1
 
 ## Live Demo & Screenshots
 
-> [POWER-STROKE](link)
+> [POWER-STROKE](https://final-capstone-project-udqc.vercel.app)
 
 <table>
 <tr>
