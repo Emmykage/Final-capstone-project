@@ -3,7 +3,6 @@ import { AiFillDelete } from 'react-icons/ai';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteMotocycle } from '../redux/motocycles/motocycles';
-import PropTypes from 'prop-types';
 
 const Motocycles = (props) => {
   const dispatch = useDispatch();
