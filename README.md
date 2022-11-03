@@ -10,7 +10,7 @@ You can see the backend for this project(https://github.com/Addisu87/capstone-ap
 
 [Kanban Board Link]()
 
-- We are four (4) in this team.
+- We are four (3) in this team.
 
   - @Emmykage
   - @Isaacpitwa
@@ -28,7 +28,7 @@ https://github.com/users/Emmykage/projects/4/views/1
 
 ## Live Demo & Screenshots
 
-> [POWER-STROKE](link)
+> [POWER-STROKE](https://final-capstone-project-udqc.vercel.app/)
 
 <table>
 <tr>
