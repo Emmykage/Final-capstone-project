@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import './details.module.css';
 import { BsChevronRight } from 'react-icons/bs';
 import { GrClose } from 'react-icons/gr';
 import { BiCog } from 'react-icons/bi';
 import { CgChevronRightO } from 'react-icons/cg';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { useParams } from 'react-router-dom';
-import Form from '../components/Reservations/Form';
+import RForm from '../components/Reservations/Form';
 import { fetchedMotocycles } from '../redux/motocycles/motocycles';
 import { postReservation } from '../redux/reservations/reservations';
 
 const Details = () => {
   const { id } = useParams();
   const user = localStorage.getItem('user');
-  const motocycles = useSelector((state) => state.motocycles);
-  const motocycle = motocycles.filter((moto) => moto.id == id);
+  const motorcycles = useSelector((state) => state.motocycles);
+  const motorcycle = motorcycles.filter((moto) => moto.id == id);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchedMotocycles());
@@ -34,8 +32,8 @@ const Details = () => {
 
   return (
     <>
-      {motocycle.map((motocycle) => (
-        <div className="details-wrapper">
+      {motorcycle.map((motocycle) => (
+        <div key={motocycle.id} className="details-wrapper">
           <div className="img-container">
             <img src={motocycle.avatar} alt={motocycle.model} />
           </div>
@@ -56,7 +54,7 @@ const Details = () => {
                 <h6>Option to purchase fee</h6>
                 <p>
                   £
-                  {motocycle.purchaseFee}
+                  {motocycle.price}
                 </p>
               </li>
 
@@ -80,7 +78,7 @@ const Details = () => {
             <p className="rep">5.9% APR Representative</p>
 
             <div className="buttons">
-              <button className="btn discover">
+              <button type="button" className="btn discover">
                 DISCOVER MORE MODELS
                 <BsChevronRight />
               </button>
@@ -92,7 +90,7 @@ const Details = () => {
               </svg>
             </div>
 
-            <button className="btn reserveBtn" onClick={toggleForm}>
+            <button type="button" className="btn reserveBtn" onClick={toggleForm}>
               <BiCog />
               {' '}
               Reserve
@@ -102,8 +100,8 @@ const Details = () => {
           </div>
 
           <div className={reserveSide ? 'sideform showForm' : 'sideForm'}>
-            <span onClick={toggleForm} className="close-btn"><GrClose /></span>
-            <Form
+            <button type="button" onClick={toggleForm} className="close-btn"><GrClose /></button>
+            <RForm
               model={motocycle.model}
               motorcycle_id={id}
               user={user}
@@ -118,7 +116,5 @@ const Details = () => {
   );
 };
 
-Details.propTypes = {
-  name: PropTypes.object.isRequired,
-};
 export default Details;
+

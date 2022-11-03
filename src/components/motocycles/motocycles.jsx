@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Bikes = (props) => {
   const {
@@ -10,7 +11,7 @@ const Bikes = (props) => {
       <Link to={`/details/${id}`}>
 
         <div className="image">
-          <img src={photo} />
+          <img src={photo} alt="motocycle" />
         </div>
         <div className="details">
           <h3>{model}</h3>
@@ -27,3 +28,10 @@ const Bikes = (props) => {
 };
 
 export default Bikes;
+
+Bikes.propTypes = {
+  model: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};

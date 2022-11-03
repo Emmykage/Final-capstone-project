@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-// import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
-const Form = (props) => {
+const RForm = (props) => {
   const user = localStorage.getItem('user');
   const { model, motorcycle_id, handleSubmit } = props;
 
@@ -14,14 +14,15 @@ const Form = (props) => {
     <form onSubmit={(e) => handleSubmit(e, { motorcycle_id, date, city })}>
       <div>
 
-        <label>Select Motocycle</label>
+        <label htmlFor="model">Select Motocycle</label>
 
-        <input type="text" value={model} readOnly />
+        <input type="text" id="model" value={model} readOnly />
       </div>
       <div>
 
-        <label>City</label>
+        <label htmlFor="city">City</label>
         <input
+          id="city"
           type="text"
           value={city}
           onChange={(e) => { setCity(e.target.value); }}
@@ -30,8 +31,9 @@ const Form = (props) => {
       </div>
       <div>
 
-        <label>Date</label>
+        <label htmlFor="date">Date</label>
         <input
+          id="date"
           type="date"
           value={date}
           onChange={(e) => { setDate(e.target.value); }}
@@ -41,8 +43,8 @@ const Form = (props) => {
 
       <div>
 
-        <label>User name</label>
-        <input type="text" value={user} />
+        <label htmlFor="name">User name</label>
+        <input id="name" type="text" value={user} />
       </div>
       <input type="submit" value="make reservation" />
     </form>
@@ -50,4 +52,10 @@ const Form = (props) => {
   );
 };
 
-export default Form;
+export default RForm;
+
+RForm.propTypes = {
+  model: PropTypes.string.isRequired,
+  hundleSubmit: PropTypes.func.isRequired,
+  motorcylce_id: PropTypes.number.isRequired,
+};

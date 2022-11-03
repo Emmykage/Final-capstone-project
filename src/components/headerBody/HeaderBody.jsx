@@ -46,12 +46,12 @@ export const HeaderBody = () => {
             >
 
               {motocycles.map((data) => (
-                <SwiperSlide>
+                <SwiperSlide key={data.id}>
                   <Link to={`details/${data.id}`}>
-                    <div key={data.id}>
+                    <div>
                       <div className="item-img">
                         <div className="bg-color" />
-                        <img src={data.avatar} />
+                        <img src={data.avatar} alt="motorcycles" />
                       </div>
                       <div className="item-details">
                         <h3>{data.model}</h3>
@@ -79,12 +79,12 @@ export const HeaderBody = () => {
             >
 
               {motocycles.map((data) => (
-                <SwiperSlide>
+                <SwiperSlide key={data.id}>
                   <Link to={`details/${data.id}`}>
-                    <div key={data.id}>
+                    <div>
                       <div className="item-img">
                         <div className="bg-color" />
-                        <img src={data.avatar} />
+                        <img src={data.avatar} alt="motorcycles" />
                       </div>
                       <div className="item-details">
                         <h3>{data.model}</h3>

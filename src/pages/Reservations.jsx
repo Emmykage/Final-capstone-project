@@ -17,14 +17,14 @@ const Reservations = () => {
       <h2> My reservations </h2>
 
       <div className="res-contain">
-        {reservations.map((data, index) => (
+        {reservations.map((data) => (
           <Reservation
             model={data.motorcycle.model}
             avatar={data.motorcycle.avatar}
             city={data.city}
             date={data.date}
             id={data.id}
-            key={index}
+            key={data.id}
           />
         ))}
 
@@ -36,7 +36,7 @@ const Reservations = () => {
       <h2> My reservations </h2>
       <h3> You are yet to make a reservation </h3>
       <div className="center-t">
-        <button className="reserve-btn" onClick={() => navigate('/reserve_form')}>Make reservation</button>
+        <button type="button" className="reserve-btn" onClick={() => navigate('/reserve_form')}>Make reservation</button>
       </div>
     </div>
   );
