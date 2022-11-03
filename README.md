@@ -8,7 +8,7 @@ You can see the backend for this project(https://github.com/Addisu87/capstone-ap
 
 ## Kanban Board
 
-[Kanban Board Link]()
+[Kanban Board Link](https://user-images.githubusercontent.com/97867917/196933806-cabeff2f-a288-4d0b-8a52-9e8b883d741c.PNG)
 
 - We are four (3) in this team.
 
