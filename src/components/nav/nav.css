@@ -1,0 +1,140 @@
+nav {
+  position: fixed;
+  width: 250px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--color-white);
+  z-index: 99;
+  transition: var(--transition);
+}
+
+nav::after {
+  content: ' ';
+  height: 30px;
+  width: 60px;
+  background-color: var(--color-bg-variant);
+  position: absolute;
+  right: -60px;
+  bottom: 20%;
+  border-radius: 0 15px 15px 0;
+}
+
+nav:hover::after {
+  background-color: var(--color-primary);
+}
+
+.nav-links {
+  margin-top: 37px;
+  list-style: none;
+  flex: 3;
+  width: 100%;
+  padding: 0;
+}
+
+.nav-links h2 {
+  padding-left: 4px;
+  text-align: left;
+  color: orangered;
+}
+
+.nav-links li {
+  padding: 0;
+  margin: 10px 0;
+}
+
+.nav-links li a {
+  line-height: 40px;
+  align-items: center;
+  height: 100%;
+  display: flex;
+  padding-left: 12px;
+  text-decoration: none;
+  color: var(--color-primary-var);
+  font-weight: 500;
+}
+
+.nav-links li a.link-bg-color {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.nav-links li a:hover {
+  border: 1px solid var(--color-abs);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.logo {
+  margin: 29px 49px;
+}
+
+.icon-div {
+  text-align: left;
+  margin: 18px 14px;
+  display: none;
+}
+
+.social-icons {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  justify-self: end;
+}
+
+.icon {
+  font-size: 26px;
+  color: orangered;
+}
+
+.limit-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    position: absolute;
+    z-index: 19;
+  }
+
+  nav {
+    height: 100vh;
+  }
+
+  nav .logo {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav .logo img {
+    width: 100%;
+  }
+
+  .icon-div {
+    display: block;
+    align-self: flex-start;
+  }
+
+  .nav-bar .nav-menu.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .nav-bar .nav-menu {
+    left: -100%;
+  }
+
+  .limit {
+    display: none;
+  }
+
+  .limit-mobile {
+    display: block;
+  }
+}
